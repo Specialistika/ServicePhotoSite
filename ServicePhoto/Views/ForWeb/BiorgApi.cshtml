@@ -1,0 +1,46 @@
+﻿<div>
+    <label for="fileUpload">Select File to Upload:</label>
+    <input type="file" id="fileUpload" />
+    <br />
+    <input type="button" value="Upload File" id="btnUploadFile" />
+</div>
+
+@section scripts{
+<script>
+        $(document).ready(function () {
+
+            $('#btnUploadFile').on('click', function () {
+                var data = new FormData();
+                var files = $("#fileUpload").get(0).files;
+                if (files.length > 0) {
+                    data.append("UploadedImage", files[0]);
+                }
+
+                var ajaxRequest = $.ajax({
+                    type: "POST",
+                    //url: 'https://crm.dixy.ru/FileUpload/Post',
+                    url: 'http://localhost:8170/FileUpload/Post',
+                    contentType: false,
+                    processData: false,
+                    data: data
+                });
+
+                ajaxRequest.done(function (responseData, textStatus) {
+                    if (textStatus == 'success') {
+                        if (responseData != null) {
+                            if (responseData.Key) {
+                                alert(responseData.Value);
+                                $("#fileUpload").val('');
+                            } else {
+                                alert(responseData.Value);
+                            }
+                        }
+                    } else {
+                        alert(responseData.Value);
+                    }
+                });
+            });
+        });
+</script>
+}
+

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Models.ForWeb.ForWebModel>
+<script type="text/javascript">
+
+        $(document).ready(
+        function () {
+            gridNotInBase = $("#gridNotInBase").grid({
+                dataKey: "idd",
+                uiLibrary: "bootstrap",
+                columns: [
+                            { field: "Idd", width: 50, sortable: true },
+                            { field: "NotCapture", width: 100, title: "Штрих-Код", sortable: true },
+                            { field: "DatelogNotData", width: 100, format: "yyyy-mm-dd HH:MM:ss", type: "date", title: "Дата", sortable: true },
+                ],
+                pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+            });
+        });
+
+</script>
+
+<body>
+    <div class="container fill">
+        <br />
+        <div class="row">
+            <br />
+            <table id="gridNotInBase" data-source="@Url.Action("DontRenFilesModel")"></table>
+            @*<table id="gridNotInBase" data-source="@Url.RouteUrl(new { Controller = "NotRenData", Action = "DontRenFilesModel" })"></table>*@
+        </div>
+        <br />
+    </div>
+</body>

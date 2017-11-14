@@ -1,0 +1,50 @@
+﻿<script type="text/javascript">
+
+    //function Search(e) {
+    //    search: $("#search").val(e.search);
+    //};
+    function Search() {
+        gridOutInfos.reload({ searchString: $("#search").val() });
+    }
+
+
+    $(document).ready(
+    function () {
+        gridOutInfos = $("#gridOutInfos").grid({
+            dataKey: "idd",
+            uiLibrary: "bootstrap",
+            columns: [
+                            { field: "Id", width: 50, sortable: true },
+                            { field: "Capture", width: 100, title: "Штрих-Код", sortable: true },
+                            { field: "Dateinto", width: 100, format: "yyyy-mm-dd HH:MM:ss", type: "date", title: "Дата", sortable: true },
+            ],
+            pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+        });
+        $("#btnSearch").on("click", Search);
+    });
+
+</script>
+<div class="container">
+        <h3>Редактор загруженных архивов от подрядчика</h3>
+        @*<p>Введите название архива в строку поиска с расширением (.zip).</p>*@
+    </div>
+
+<body>
+    <div class="container fill">
+        <br />
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" id="search" class="form-control" placeholder="Search archive...">
+                    <span class="input-group-btn">
+                        <button type="button" id="btnSearch" class="btn btn-primary">Поиск архива</button>
+                    </span>
+                </div>
+            </div>
+            <br />
+            <br />
+            <table id="gridOutInfos" data-source="@Url.Action("ForWebReadMethod")"></table>
+        </div>
+        <br />
+    </div>
+</body>

@@ -1,0 +1,190 @@
+﻿<script type="text/javascript">
+
+    function Search(e) {
+        search: $("#search").val(e.search);
+    };
+    function SearchMetod() {
+        var searchString = {
+            search: $("#search").val()
+        };
+        $.ajax({
+            url: "Search",
+            type: "POST",
+            data: { player: searchString.search },
+            success: function (response) {
+                if (response.EstractArchive != null)
+                    $("#search_result").val(response.EstractArchive),
+                    $("#playerModal").modal("show")
+                else {
+                    alert("Архив не найден");
+                    $("#playerModal").modal("hide")
+                };
+            }
+        })
+    };
+    function gridMine() {
+        $("#notShtrihCode").modal("show")
+        gridRen();
+    };
+
+    function reloadMineGrid() {
+        location.reload()
+    };
+
+    function ExtractArt() {
+        $.ajax({
+            url: "ExtractArtMethod",
+            type: "POST",
+            success: function (response) {
+                if (response.count != 0)
+                    $("#playerModal").modal("hide"),
+                    $('#count_result').val(response.count),
+                    x = document.getElementById('count_result'),
+                         x.innerHTML = 'Количество перемещенных файлов ' + response.count,
+                         x.style.color = "red"
+                else {
+                    $("#playerModal").modal("hide"),
+                    alert(response.ExceptionMessage);
+                };
+            }
+        })
+    };
+    function ExtractShtrih() {
+        $.ajax({
+            url: "ExtractShtrihMethod",
+            type: "POST",
+            success: function (response) {
+                if (response.ExtractArc != null)
+                    $("#playerModal").modal("hide"),
+                    $('#count_result').val(response.ExtractArc),
+                         x = document.getElementById('count_result'),
+                         x.innerHTML = 'Количество файлов всего ' + response.ExtractArc,
+                         x.style.color = "red",
+                    $('#count_rename').val(response.UploadMainDir),
+                         y = document.getElementById('count_rename'),
+                         y.innerHTML = 'Количество переименованных файлов ' + response.UploadMainDir,
+                         y.style.color = "Blue"
+                else {
+                    $("#playerModal").modal("hide"),
+                    alert(response.ExceptionMessage);
+                };
+            }
+        })
+    };
+    function gridRen() {
+    gridNotInBase = $("#gridNotInBase").grid({
+        dataKey: "idd",
+        uiLibrary: "bootstrap",
+        columns: [
+                    { field: "Idd", width: 50, sortable: true },
+                    { field: "NotCapture", width: 100, title: "Штрих-Код", sortable: true },
+                    { field: "DatelogNotData", width: 100, format: "yyyy-mm-dd HH:MM:ss", type: "date", title: "Дата", sortable: true },
+                ],
+            pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+        });
+    };
+
+    $(document).ready(
+    function () {
+        gridOutInfos = $("#gridOutInfos").grid({
+            dataKey: "idd",
+            uiLibrary: "bootstrap",
+            columns: [
+                            { field: "Id", width: 50, sortable: true },
+                            { field: "Barlog", width: 100, title: "Штрих-Код", sortable: true },
+                            { field: "Codelog", width: 100, title: "Арт-Код", sortable: true },
+                            { field: "Datelog", width: 100, format: "yyyy-mm-dd HH:MM:ss", type: "date", title: "Дата", sortable: true },
+                            { field: "Renlog", width: 100, title: "Статус переименования", sortable: true },
+            ],
+            pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+        });
+        $("#btnExtractArt").on("click", ExtractArt);
+        $("#btnExtractShtrih").on("click", ExtractShtrih);
+        $("#btnSearch").on("click", SearchMetod);
+        $("#btnNotShtrihCode").on("click", gridMine);
+        $("#btnreloadMineGrid").on("click", reloadMineGrid);
+    });
+
+</script>
+<div class="container">
+        <h3>Переименование файлов</h3>
+        <p>Введите название архива в строку поиска с расширением (.zip). В таблице отражаются все операции за текущий день</p>
+    </div>
+
+<body>
+    <div class="container fill">
+        <br />
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" id="search" class="form-control" placeholder="Search archive...">
+                    <span class="input-group-btn">
+                        <button type="button" id="btnSearch" class="btn btn-primary">Поиск архива</button>
+                    </span>
+                </div>
+            </div>
+            <br />
+            <br />
+            <table id="gridOutInfos" data-source="@Url.Action("OutInfosModel")"></table>
+        </div>
+        <br />
+            </div>
+                <span class="input-group-btn">
+                    <button type="button" id="btnNotShtrihCode" class="btn btn-primary">Не переименованные штрикоды</button>
+                </span>
+            <div class="row-fluid">
+        <div class="span12">
+            <div class="row-fluid">
+                <div class="span6" id="count_result"></div>
+                <br />
+                <div class="span6" id="count_rename"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="notShtrihCode" tabindex="-1" role="dialog" aria-labelledby="myModalLab" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLab">Штрих-коды не найденые в базе</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <table id="gridNotInBase" data-source="@Url.RouteUrl(new { Controller = "NotRenData", Action = "DontRenFilesModel" })"></table>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnreloadMineGrid" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="modal fade" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Архив найден и распакован</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="search_result">Имя архива</label>
+                            <input type="text" class="form-control" id="search_result" readonly="readonly">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="btnExtractArt" class="btn btn-primary">ExtractArt</button>
+                    <button type="button" id="btnExtractShtrih" class="btn btn-primary">ExtractShtrih</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

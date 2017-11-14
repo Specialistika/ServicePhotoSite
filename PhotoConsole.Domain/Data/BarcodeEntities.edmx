@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RenFilesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="idd" />
+          </Key>
+          <Property Name="idd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ForWebTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InfoDate" Type="varchar" MaxLength="50" />
+          <Property Name="Data" Type="datetime" />
+        </EntityType>
+        <EntityType Name="InBarcode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Barcode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InCapture">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dateinto" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IntoCapture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ToCapture" Type="varchar" MaxLength="50" />
+          <Property Name="Dateloginto" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Not_inBase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Datelog" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OutInCapture">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dateinto" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OutInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Barlog" Type="varchar" MaxLength="20" />
+          <Property Name="Codelog" Type="varchar" MaxLength="20" />
+          <Property Name="Datelog" Type="datetime" />
+          <Property Name="Renlog" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="RenFilesModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ForWebTest" EntityType="Self.ForWebTest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InBarcode" EntityType="Self.InBarcode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InCapture" EntityType="Self.InCapture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IntoCapture" EntityType="Self.IntoCapture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Not_inBase" EntityType="Self.Not_inBase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutInCapture" EntityType="Self.OutInCapture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutInfo" EntityType="Self.OutInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RenFilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="InBarcode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InCapture">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Capture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dateinto" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="IntoCapture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToCapture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dateloginto" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OutInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Barlog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Codelog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Datelog" Type="DateTime" Precision="3" />
+          <Property Name="Renlog" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="RenFilesEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="InBarcode" EntityType="Self.InBarcode" />
+          <EntitySet Name="InCapture" EntityType="Self.InCapture" />
+          <EntitySet Name="IntoCapture" EntityType="Self.IntoCapture" />
+          <EntitySet Name="OutInfo" EntityType="Self.OutInfo" />
+          <EntitySet Name="Categories" EntityType="RenFilesModel.Categories" />
+          <EntitySet Name="ForWebTest" EntityType="RenFilesModel.ForWebTest" />
+          <EntitySet Name="Not_inBase" EntityType="RenFilesModel.Not_inBase" />
+          <EntitySet Name="OutInCapture" EntityType="RenFilesModel.OutInCapture" />
+        </EntityContainer>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="idd" />
+          </Key>
+          <Property Name="idd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ForWebTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="InfoDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Not_inBase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Capture" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Datelog" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OutInCapture">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Capture" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dateinto" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RenFilesModelStoreContainer" CdmEntityContainer="RenFilesEntities1">
+          <EntitySetMapping Name="InBarcode">
+            <EntityTypeMapping TypeName="RenFilesModel.InBarcode">
+              <MappingFragment StoreEntitySet="InBarcode">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InCapture">
+            <EntityTypeMapping TypeName="RenFilesModel.InCapture">
+              <MappingFragment StoreEntitySet="InCapture">
+                <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Capture" ColumnName="Capture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IntoCapture">
+            <EntityTypeMapping TypeName="RenFilesModel.IntoCapture">
+              <MappingFragment StoreEntitySet="IntoCapture">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ToCapture" ColumnName="ToCapture" />
+                <ScalarProperty Name="Dateloginto" ColumnName="Dateloginto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutInfo">
+            <EntityTypeMapping TypeName="RenFilesModel.OutInfo">
+              <MappingFragment StoreEntitySet="OutInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Barlog" ColumnName="Barlog" />
+                <ScalarProperty Name="Codelog" ColumnName="Codelog" />
+                <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+                <ScalarProperty Name="Renlog" ColumnName="Renlog" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="RenFilesModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idd" ColumnName="idd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ForWebTest">
+            <EntityTypeMapping TypeName="RenFilesModel.ForWebTest">
+              <MappingFragment StoreEntitySet="ForWebTest">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="InfoDate" ColumnName="InfoDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Not_inBase">
+            <EntityTypeMapping TypeName="RenFilesModel.Not_inBase">
+              <MappingFragment StoreEntitySet="Not_inBase">
+                <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+                <ScalarProperty Name="Capture" ColumnName="Capture" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutInCapture">
+            <EntityTypeMapping TypeName="RenFilesModel.OutInCapture">
+              <MappingFragment StoreEntitySet="OutInCapture">
+                <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
+                <ScalarProperty Name="Capture" ColumnName="Capture" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

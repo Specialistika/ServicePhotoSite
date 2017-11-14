@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ee46e66ece44968901f388bcc26b9e4" Name="Diagram1">
+        <EntityTypeShape EntityType="RenFilesModel.InBarcode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.InCapture" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.IntoCapture" Width="1.5" PointX="6.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.OutInfo" Width="1.5" PointX="4.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.Categories" Width="1.5" PointX="0.75" PointY="3" />
+        <EntityTypeShape EntityType="RenFilesModel.ForWebTest" Width="1.5" PointX="3.125" PointY="3.125" />
+        <EntityTypeShape EntityType="RenFilesModel.Not_inBase" Width="1.5" PointX="7.125" PointY="2.875" />
+        <EntityTypeShape EntityType="RenFilesModel.OutInCapture" Width="1.5" PointX="5" PointY="3.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
