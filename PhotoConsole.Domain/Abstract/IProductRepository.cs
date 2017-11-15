@@ -16,7 +16,7 @@ namespace PhotoConsole.Domain.Abstract
         IQueryable<ForWebTest> ForWebTests { get; }
         IQueryable<InCapture> InCaptures { get; }
         IQueryable<OutInCapture> OutInCapture { get; }
-        IQueryable<Not_inBase> Not_inBase { get; }
-        IQueryable<InBarcode> InBarcode { get; }
+        IQueryable<Not_inBase> Not_inBases { get; }
+        IQueryable<InBarcode> InBarcodes { get; }
     }
 }

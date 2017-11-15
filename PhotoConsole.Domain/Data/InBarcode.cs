@@ -17,5 +17,6 @@ namespace PhotoConsole.Domain.Data
         public int id { get; set; }
         public string Barcode { get; set; }
         public string Code { get; set; }
+        public Nullable<System.DateTime> DateUpdate { get; set; }
     }
 }

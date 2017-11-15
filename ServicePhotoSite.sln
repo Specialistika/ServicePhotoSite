@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EF02FB8A-5657-434D-A0A8-1FEA6A16193D}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoConsole.Domain", "PhotoConsole.Domain\PhotoConsole.Domain.csproj", "{C6E1FD54-7C08-403C-A24F-89DEF3CC1F75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoController", "ServicePhoto\PhotoController.csproj", "{2E7D980A-5570-4EE5-8D77-60FC2AB0F024}"

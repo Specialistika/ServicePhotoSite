@@ -54,5 +54,8 @@ namespace PhotoConsole.Domain.Entities
         public int Id { get; set; }
         public string Barcode { get; set; }
         public string Code { get; set; }
+        public Nullable<System.DateTime> DateUpdate { get; set; }
+
     }
+
 }

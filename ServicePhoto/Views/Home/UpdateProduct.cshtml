@@ -1,0 +1,72 @@
+﻿    <script>
+        var myVar;
+
+        function UpdateProduct() {
+            $("#loaderr").attr('id', function () {
+                return 'loader'
+            });
+
+
+            $.ajax({
+                url: "UploadProductMuthod",
+                type: "POST",
+                success: function (response) {
+                    if (response != null) {
+                        myFunction();
+                        $("#count_result").val(response),
+                         x = document.getElementById('count_result'),
+                         x.innerHTML = 'Количество новых товаров ' + response,
+                         x.style.color = "red"
+                    }
+                    else {
+                        alert("Нет новых товаров");
+                    };
+                }
+            })
+        };
+
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 0);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+
+        $(document).ready(
+        function () {
+            $("#btnUpdate").on("click", UpdateProduct);
+        });
+
+    </script>
+
+    <h2 class="text-primary">Подгрузка товара из САП</h2>
+
+
+    <body> 
+          @*onload="myFunction()" style="margin:0;">*@
+
+        <div id="loaderr"></div>
+
+        <div style="display:none;" id="myDiv" class="badge-balanced">
+            <div class="container">
+                <div class="alert alert-info alert-dismissable fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <h4 class="text-primary">Обновление закончено</h4>
+                    <strong class="text-primary" id="count_result"></strong>
+                </div>
+            </div>
+        </div>
+        <div class="container fill">
+            <br />
+            <div class="row">
+                <div class="col-md-3">
+                    <span class="input-group-btn">
+                        <button type="button" id="btnUpdate" class="btn btn-primary">Обновление товараов</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </body>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Constructors.ProductsSup;
 
 namespace Controllers.Home
 {
@@ -27,5 +28,16 @@ namespace Controllers.Home
 
             return View();
         }
+        public ActionResult UpdateProduct()
+        {
+            return View();
+        }
+        public string UploadProductMuthod()
+        {
+           int countProd = UploadProductsSup.UploadProducts();
+           string countProduct = countProd.ToString();
+           return countProduct;
+        }
+
     }
 }

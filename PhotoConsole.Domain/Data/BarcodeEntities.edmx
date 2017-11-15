@@ -28,6 +28,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Barcode" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" />
         </EntityType>
         <EntityType Name="InCapture">
           <Key>
@@ -92,6 +93,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="InCapture">
           <Key>
@@ -170,6 +172,7 @@
           <EntitySetMapping Name="InBarcode">
             <EntityTypeMapping TypeName="RenFilesModel.InBarcode">
               <MappingFragment StoreEntitySet="InBarcode">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Barcode" ColumnName="Barcode" />
                 <ScalarProperty Name="Code" ColumnName="Code" />

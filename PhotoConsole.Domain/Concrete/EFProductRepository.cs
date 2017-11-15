@@ -36,11 +36,11 @@ namespace PhotoConsole.Domain.Concrete
         {
             get { return contexts.OutInCapture; }
         }
-        public IQueryable<Not_inBase> Not_inBase
+        public IQueryable<Not_inBase> Not_inBases
         {
             get { return contexts.Not_inBase; }
         }
-        public IQueryable<InBarcode> InBarcode
+        public IQueryable<InBarcode> InBarcodes
         {
             get { return contexts.InBarcode; }
         }

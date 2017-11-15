@@ -4,9 +4,9 @@ using System.Configuration;
 
 namespace Constructors.ConfigPathName
 {
-    public class ConfigPath
+    public static class ConfigPath
     {
-        protected static object GetAppSetting(Type expectedType, string key)
+        public static object GetAppSetting(Type expectedType, string key)
         {
             string value = ConfigurationManager.AppSettings.Get(key);
             try

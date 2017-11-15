@@ -255,6 +255,7 @@
     <Compile Include="Constructors\UnZipNative.cs" />
     <Compile Include="Constructors\UnzipModule.cs" />
     <Compile Include="Constructors\UploadMultipartFormProvider.cs" />
+    <Compile Include="Constructors\UploadProductsSup.cs" />
     <Compile Include="Constructors\VariableConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActionRepairController.cs" />
@@ -291,6 +292,7 @@
   <ItemGroup>
     <Content Include="7z-x64.dll" />
     <Content Include="7z-x86.dll" />
+    <Content Include="Content\animate-bottom.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1197,6 +1199,7 @@
     <Content Include="Views\ViewForWeb\ForWebGridMethod.cshtml" />
     <Content Include="Views\ForWeb\UploadForWebView.cshtml" />
     <Content Include="Views\Native\UploadNativeView.cshtml" />
+    <Content Include="Views\Home\UpdateProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\" />

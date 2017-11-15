@@ -38,7 +38,8 @@ namespace BundleModule
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-theme.min.css",
-                      "~/Content/grid-0.4.3.min.css"
+                      "~/Content/grid-0.4.3.min.css",
+                      "~/Content/animate-bottom.css"
                       ));
         }
     }
