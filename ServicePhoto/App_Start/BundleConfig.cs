@@ -39,7 +39,8 @@ namespace BundleModule
                       "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-theme.min.css",
                       "~/Content/grid-0.4.3.min.css",
-                      "~/Content/animate-bottom.css"
+                      "~/Content/animate-bottom.css",
+                      "~/Content/glyphicon-refresh-animate.css"
                       ));
         }
     }

@@ -2,29 +2,28 @@
         var myVar;
 
         function UpdateProduct() {
-            $("#loaderr").attr('id', function () {
-                return 'loader'
-            });
-
-
             $.ajax({
                 url: "UploadProductMuthod",
                 type: "POST",
                 success: function (response) {
-                    if (response != null) {
-                        myFunction();
-                        $("#count_result").val(response),
-                         x = document.getElementById('count_result'),
-                         x.innerHTML = 'Количество новых товаров ' + response,
-                         x.style.color = "red"
+                    if (response.threadStatus = "Running") {
+                        $("#status_result").val(response.threadStatus)
+                         , x = document.getElementById('status_result')
+                         , x.innerHTML = 'Обновление данных ';
+                        $("#btnUpdate")
+                        , y = document.getElementById('btnUpdate')
+                        , y.innerHTML = '<i class = "glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>' + ' Обновление товараов';
                     }
-                    else {
-                        alert("Нет новых товаров");
-                    };
                 }
             })
         };
 
+        function StopProcess() {
+            $.ajax({
+                url: "StopUploadProduct",
+                type: "POST"
+            })
+        };
 
         function myFunction() {
             myVar = setTimeout(showPage, 0);
@@ -35,38 +34,63 @@
             document.getElementById("myDiv").style.display = "block";
         }
 
+        function countProcess() {
+            $.ajax({
+                url: "countProcess",
+                type: "POST",
+                success: function (response) {
+                    if (response.countRecords != null) {
+                        $("#count_result").val(response.countRecords)
+                         , x = document.getElementById('count_result')
+                         , x.innerHTML = 'Количество товаров ' + response.countRecords;
+                    }
+                    if (response.threadStatus == "Stopped") {
+                        $("#status_result").val(response.threadStatus)
+                         , x = document.getElementById('status_result')
+                         , x.innerHTML = 'Загрузка завершена ';
+                        $("#btnUpdate")
+                        , y = document.getElementById('btnUpdate')
+                        , y.innerHTML = ' Обновление товараов';
+                    }
+                    else if (response.threadStatus == "Aborted") {
+                        $("#status_result").val(response.threadStatus)
+                         , x = document.getElementById('status_result')
+                         , x.innerHTML = 'Загрузка приостоновлена ';
+                    }
+                }
+            })
+        };
+
         $(document).ready(
         function () {
             $("#btnUpdate").on("click", UpdateProduct);
+            $("#btnStop").on("click", StopProcess);
+            setInterval("countProcess()", 1000);
         });
-
+        
     </script>
 
-    <h2 class="text-primary">Подгрузка товара из САП</h2>
-
-
     <body> 
-          @*onload="myFunction()" style="margin:0;">*@
-
-        <div id="loaderr"></div>
-
-        <div style="display:none;" id="myDiv" class="badge-balanced">
-            <div class="container">
-                <div class="alert alert-info alert-dismissable fade in">
+        <h3 class="text-center">Обновление товара из САП</h3>
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3" style="text-align:center">
+                <div class=" alert alert-warning fade in">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <h4 class="text-primary">Обновление закончено</h4>
-                    <strong class="text-primary" id="count_result"></strong>
+                    <h3><span class="label label-warning" id="status_result" /></h3>
+                    <h3><span class="label label-warning" id="count_result" /></h3>
                 </div>
             </div>
         </div>
-        <div class="container fill">
-            <br />
-            <div class="row">
-                <div class="col-md-3">
-                    <span class="input-group-btn">
-                        <button type="button" id="btnUpdate" class="btn btn-primary">Обновление товараов</button>
-                    </span>
+                <div class="container fill">
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span class="btn btn-info" role="button">
+                                <button type="button" id="btnUpdate" class="btn btn-primary">Обновление товараов</button>
+                                <button type="button" id="btnStop" class="btn btn-danger">Остановка процесса</button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </body>
+        <br />
+</body>

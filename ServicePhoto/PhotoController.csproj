@@ -14,7 +14,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PhotoServiceSite</RootNamespace>
-    <AssemblyName>MVCApp</AssemblyName>
+    <AssemblyName>PhotoServiceSite</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -44,6 +44,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -291,14 +297,13 @@
     <Compile Include="Constructors\PartUploadNative.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7z-x64.dll" />
-    <Content Include="7z-x86.dll" />
     <Content Include="Content\animate-bottom.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\container.css" />
+    <Content Include="Content\glyphicon-refresh-animate.css" />
     <Content Include="Content\grid-0.4.3.css" />
     <Content Include="Content\grid-0.4.3.min.css" />
     <Content Include="Content\Gridmvc.css" />
@@ -378,7 +383,7 @@
     <Content Include="Scripts\grid-0.4.3.js" />
     <Content Include="Scripts\grid-0.4.3.min.js" />
     <Content Include="Scripts\dateFormat.min" />
-    <None Include="Properties\PublishProfiles\ServicePhoto.pubxml" />
+    <None Include="Properties\PublishProfiles\SiteServicePhoto.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />

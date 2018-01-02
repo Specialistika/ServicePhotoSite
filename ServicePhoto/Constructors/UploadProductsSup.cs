@@ -7,14 +7,18 @@ using System.Data.Entity;
 using Constructors.PathString;
 using PhotoConsole.Domain.Data;
 using PhotoConsole.Domain.Concrete;
+using System.Threading.Tasks;
+using System.Threading;
+
+
 
 namespace Constructors.ProductsSup
 {
-    public static class UploadProductsSup     
+    public static class UploadProductsSup
     {
-        public static int UploadProducts()
+        static Thread action = null;
+        private static void UploadProducts()
         {
-            int countUploadProduct = 0;
             var dbdata = new EFProductRepository();
             char[] delimiterChars = { ';' };
             string[] Barcod = null;
@@ -41,15 +45,21 @@ namespace Constructors.ProductsSup
 
                         if (seekProduct == null)
                         {
-                            countUploadProduct++;
-                            var inbarcode = new InBarcode
+                            try
                             {
-                                Barcode = Barcod[0].ToString(),
-                                Code = Barcod[1].ToString(),
-                                DateUpdate = DateTime.Now
-                            };
-                            db.InBarcode.Add(inbarcode);
-                            db.SaveChanges();
+                                var inbarcode = new InBarcode
+                                {
+                                    Barcode = Barcod[0].ToString(),
+                                    Code = Barcod[1].ToString(),
+                                    DateUpdate = DateTime.Now
+                                };
+                                    db.InBarcode.Add(inbarcode);
+                                    db.SaveChanges();
+                            }
+                            catch (InvalidOperationException e)
+                            {
+                                string showExeption = e.Message.ToString();
+                            }
                         };
                        
                     };
@@ -60,7 +70,60 @@ namespace Constructors.ProductsSup
             {
                 throw new ArgumentNullException("File not found" );
             }
-            return countUploadProduct;
         }
-    }
+            public static int startUploadMethod()
+            {
+                int countt = 0;
+                string exeptionAttrstop = null;
+                try
+                {
+                    action = new Thread(() => { UploadProducts(); });
+                    action.Start();
+                }
+                catch (ThreadInterruptedException e)
+                {
+                    exeptionAttrstop = "Поток прерван" + e.Message;
+                }
+                    return countt;
+            }
+            public static void stopUploadMethod()
+            { 
+                if (action != null)
+                {
+                    try 
+                    {
+                        action.Abort();
+                        action.Join();
+                    } 
+                    catch(ThreadAbortException e) 
+                    {
+                       string exeption = e.Message;
+                    }
+                }
+            }
+            public static string countRecords()
+            {
+                int countRecords = 0;
+
+                using (var db = new RenFilesEntities1())
+                {
+                    countRecords = db.InBarcode.Count(); 
+                };
+                    return countRecords.ToString();
+            }
+            public static void atributeStop(out string threadStatus, out string exeptionAttrstop)
+            {
+                threadStatus = null;
+                exeptionAttrstop = null;
+
+                try
+                {
+                    threadStatus = "" + action.ThreadState;
+                }
+                catch (ThreadInterruptedException e)
+                {
+                    exeptionAttrstop = "Поток прерван" + e.Message;
+                }
+            }
+      }
 }

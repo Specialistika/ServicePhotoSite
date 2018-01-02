@@ -32,12 +32,21 @@ namespace Controllers.Home
         {
             return View();
         }
-        public string UploadProductMuthod()
+        public void UploadProductMuthod()
         {
-           int countProd = UploadProductsSup.UploadProducts();
-           string countProduct = countProd.ToString();
-           return countProduct;
+            int countProd = UploadProductsSup.startUploadMethod();
         }
-
+        public void StopUploadProduct()
+        {
+            UploadProductsSup.stopUploadMethod();
+        }
+        public JsonResult countProcess()
+        {
+            string threadStatus;
+            string exeptionAttrstop;
+            UploadProductsSup.atributeStop(out threadStatus, out exeptionAttrstop);
+            string countRecords = UploadProductsSup.countRecords();
+            return Json(new { countRecords, threadStatus, exeptionAttrstop }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
