@@ -31,7 +31,7 @@ namespace Constructors.ProductsSup
 
                 string[] Barcods = File.ReadAllLines(fileName);
             
-            using (var db = new RenFilesEntities1())
+            using (var db = new RenFilesEntities())
             {
                 for (int i = 0; i < Barcods.Length; i++)
                 {
@@ -68,7 +68,7 @@ namespace Constructors.ProductsSup
             }
             else 
             {
-                throw new ArgumentNullException("File not found" );
+                throw new ArgumentNullException("File not found");
             }
         }
             public static int startUploadMethod()
@@ -105,7 +105,7 @@ namespace Constructors.ProductsSup
             {
                 int countRecords = 0;
 
-                using (var db = new RenFilesEntities1())
+                using (var db = new RenFilesEntities())
                 {
                     countRecords = db.InBarcode.Count(); 
                 };

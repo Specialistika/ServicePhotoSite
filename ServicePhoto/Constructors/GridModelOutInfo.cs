@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PhotoConsole.Domain.Entities;
 using PhotoConsole.Domain.Data;
-using Constructors.PathString;
 using Models.SortHelper;
-using System.IO;
 
 namespace Constructors.OutInfoGrid
 {
@@ -14,7 +12,7 @@ namespace Constructors.OutInfoGrid
         private DateTime date = DateTime.Now;
         public List<OutInfos> OutInfos(int? page, int? limit, string sortB, string direction, out int total)
         {
-            using (var context = new RenFilesEntities1())
+            using (var context = new RenFilesEntities())
             {
                 var records = (from p in context.OutInfo
                                        where p.Datelog > date.Date

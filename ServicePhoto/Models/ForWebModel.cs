@@ -7,7 +7,7 @@ using ModelsPageinfo;
 
 namespace Models.ForWeb
 {
-    public static class ForWebModel
+    public class ForWebModel
         //: IDisposable
     {
         //bool disposed = true;
@@ -17,7 +17,8 @@ namespace Models.ForWeb
         public static IEnumerable<Not_inBases> Not_inBase { get; set; }
         public static IEnumerable<OutInCapture> OutInCapture { get; set; }
         public static IEnumerable<InBarcodes> InBarcodes { get; set; }
-        public static Pageinfo pageinfo { get; set; }
+		public static IEnumerable<ErrorFixes> ErrorFix { get; set; }
+		public static Pageinfo pageinfo { get; set; }
 
         //public void Dispose(Boolean itIsSafeToAlsoFreeManagedObjects)
         //{

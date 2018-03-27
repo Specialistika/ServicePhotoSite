@@ -28,7 +28,7 @@ namespace ExtractArtCode.Constructors
             {
                 filess.Add(Path.GetFileNameWithoutExtension(file.FullName));
             }
-            using (var db = new RenFilesEntities1())
+            using (var db = new RenFilesEntities())
             for (int m = 0; m < files.Length; m++)
             {
                     try

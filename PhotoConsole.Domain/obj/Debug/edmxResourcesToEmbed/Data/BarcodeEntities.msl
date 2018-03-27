@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RenFilesModelStoreContainer" CdmEntityContainer="RenFilesEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="RenFilesModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="idd" ColumnName="idd" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorFix">
+      <EntityTypeMapping TypeName="RenFilesModel.ErrorFix">
+        <MappingFragment StoreEntitySet="ErrorFix">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForWebTest">
+      <EntityTypeMapping TypeName="RenFilesModel.ForWebTest">
+        <MappingFragment StoreEntitySet="ForWebTest">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InfoDate" ColumnName="InfoDate" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InBarcode">
+      <EntityTypeMapping TypeName="RenFilesModel.InBarcode">
+        <MappingFragment StoreEntitySet="InBarcode">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Not_inBase">
+      <EntityTypeMapping TypeName="RenFilesModel.Not_inBase">
+        <MappingFragment StoreEntitySet="Not_inBase">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Capture" ColumnName="Capture" />
+          <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutInCapture">
+      <EntityTypeMapping TypeName="RenFilesModel.OutInCapture">
+        <MappingFragment StoreEntitySet="OutInCapture">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Capture" ColumnName="Capture" />
+          <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutInfo">
+      <EntityTypeMapping TypeName="RenFilesModel.OutInfo">
+        <MappingFragment StoreEntitySet="OutInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Barlog" ColumnName="Barlog" />
+          <ScalarProperty Name="Codelog" ColumnName="Codelog" />
+          <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+          <ScalarProperty Name="Renlog" ColumnName="Renlog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NameZip">
+      <EntityTypeMapping TypeName="RenFilesModel.NameZip">
+        <MappingFragment StoreEntitySet="NameZip">
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="NamefileZip" ColumnName="NamefileZip" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadCapture">
+      <EntityTypeMapping TypeName="RenFilesModel.UploadCapture">
+        <MappingFragment StoreEntitySet="UploadCapture">
+          <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+          <ScalarProperty Name="DateUpload" ColumnName="DateUpload" />
+          <ScalarProperty Name="Capture" ColumnName="Capture" />
+          <ScalarProperty Name="Id_NameZip" ColumnName="Id_NameZip" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessCapture">
+      <EntityTypeMapping TypeName="RenFilesModel.ProcessCapture">
+        <MappingFragment StoreEntitySet="ProcessCapture">
+          <ScalarProperty Name="DateProcess" ColumnName="DateProcess" />
+          <ScalarProperty Name="ToCapture" ColumnName="ToCapture" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

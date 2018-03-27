@@ -1,63 +1,96 @@
 ﻿using System;
 using System.IO;
-using ComponentAce.Compression.ZipForge;
-using ComponentAce.Compression.Archiver;
 using System.IO.Compression;
 using PhotoConsole.Domain.Data;
-using Constructors.PathString;
+using System.Linq;
 
 namespace Constructor.UnZipFileNative
 {
-    public class UnZipNative
+    public static class UnZipNative
     {
-              //public string SourceFile { get; set; }
+        public static void InteredArcive(string SourceFile, string NameFolder)
+        {
+			string fileName = Path.GetFileName(SourceFile);
 
-              public void ExtractNative(string SourceFile)
-              {
-                  using (var archiver = new ZipForge())
-                  {
-                      try
-                      {
-                          archiver.FileName = SourceFile;
-                          archiver.OpenArchive(System.IO.FileMode.Open);
-                          archiver.BaseDir = VariableConfig.ForWebPath;
-                          archiver.ExtractFiles("*.*");
-                          archiver.CloseArchive();
-                      }
-                      catch (ArchiverException ae)
-                      {
-                          Console.WriteLine("Message: {0}\t Error code: {1}", ae.Message, ae.ErrorCode);
-                          Console.ReadLine();
-                      }
-                  };
+			#region extract archive
+			//using (var archiver = new ZipForge())
+			//{
+			//    try
+			//    {
+			//        archiver.FileName = SourceFile;
+			//        archiver.OpenArchive(System.IO.FileMode.Open);
+			//        archiver.BaseDir = VariableConfig.ForWebPath;
+			//        archiver.ExtractFiles("*.*");
+			//        archiver.CloseArchive();
+			//    }
+			//    catch (ArchiverException ae)
+			//    {
+			//        ErroreArchive = "Message: {0}\t Error code: {1}" + ae.Message + ae.ErrorCode;
+			//    }
+			//};
+			#endregion
 
-                  using (ZipArchive archive = ZipFile.OpenRead(SourceFile))
-                  {
-                      using (var db = new RenFilesEntities1())
-                          foreach (ZipArchiveEntry entry in archive.Entries)
-                          {
-                              string nv = entry.Name;
-                              var forwebtest = new IntoCapture 
-                              { 
-                                  ToCapture = nv, 
-                                  Dateloginto = DateTime.Now 
-                              };
-                              if (forwebtest.Id == 0)
-                              {
-                                  try
-                                  {
-                                      db.IntoCapture.Add(forwebtest);
-                                  }
-                                  catch (Exception s)
-                                  {
-                                      s.Data.Add("info", s);
-                                      s.Data["ExtraInfo"] = "Information from NestedRoutine1.";
-                                      throw;
-                                  }
-                              };
-                              db.SaveChanges();
-                          }
-                  };
-              }
+			if (SourceFile.Contains(".zip"))
+			{
+				using (var db = new RenFilesEntities())
+				{
+					var NameZipfile = new NameZip { NamefileZip = fileName, DateTime = DateTime.Now };
+					db.NameZip.Add(NameZipfile);
+					db.SaveChanges();
+
+					using (var archive = ZipFile.OpenRead(SourceFile))
+					{
+						foreach (ZipArchiveEntry entry in archive.Entries)
+						{
+							var nameCapture = new UploadCapture
+							{
+								Id_NameZip = db.NameZip.Max(s => s.Id),
+								Capture = entry.Name,
+								DateUpload = DateTime.Now,
+								FolderName = NameFolder
+							};
+							if (nameCapture.Id == 0)
+							{
+								try
+								{
+									db.UploadCapture.Add(nameCapture);
+								}
+								catch (Exception s)
+								{
+									string ErroreArchive = "ErrorArchive " + s.Message;
+									var Error = new ErrorFix { Error = ErroreArchive, DateInsert = DateTime.Now };
+									db.ErrorFix.Add(Error);
+								}
+							};
+						}
+						db.SaveChanges();
+					};
+				};
+			}
+			else
+			{
+				using (var db = new RenFilesEntities())
+				{
+					try
+					{
+						var nameCapture = new UploadCapture
+						{
+							Capture = fileName,
+							DateUpload = DateTime.Now,
+							FolderName = NameFolder
+						};
+
+						db.UploadCapture.Add(nameCapture);
+					}
+					catch (Exception s)
+					{
+						string ErroreArchive = "ErrorArchive " + s.Message;
+						var Error = new ErrorFix { Error = ErroreArchive, DateInsert = DateTime.Now };
+						db.ErrorFix.Add(Error);
+					}
+					db.SaveChanges();
+				}
+			}
+        }
     }
 }

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace PhotoConsole.Domain.Entities
 {
     public class IntoCap
-    {
+	{
         public int Id { get; set; }
         public string ToCapture { get; set; }
-        public DateTime Dateloginto { get; set; }
+        public DateTime? Dateloginto { get; set; }
     }
     public class Categories
     {
@@ -36,6 +36,7 @@ namespace PhotoConsole.Domain.Entities
         public int Id { get; set; }
         public string Capture { get; set; }
         public Nullable<System.DateTime> Dateinto { get; set; }
+		public string FolderName { get; set; }
     }
     public class OutInCapture
     {
@@ -57,5 +58,11 @@ namespace PhotoConsole.Domain.Entities
         public Nullable<System.DateTime> DateUpdate { get; set; }
 
     }
+	public class ErrorFixes
+	{
+		public int Id { get; set; }
+		public string Error { get; set; }
+		public Nullable<System.DateTime> DateInsert { get; set; }
+	}
 
 }

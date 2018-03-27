@@ -1,0 +1,9 @@
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Release\ChuckUpload.WebApi.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Release\ChuckUpload.WebApi.pdb
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Release\System.Net.Http.Formatting.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Release\System.Web.Http.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Release\System.Net.Http.Formatting.xml
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Release\System.Web.Http.xml
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Release\ChuckUpload.WebApi.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Release\ChuckUpload.WebApi.pdb
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Release\ChuckUpload.WebApi.csprojResolveAssemblyReference.cache

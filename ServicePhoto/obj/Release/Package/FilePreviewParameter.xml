@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="PhotoService" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\VSlabs\\Projects\\ServicePhotoSite\\ServicePhoto\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\VSlabs\\Projects\\ServicePhotoSite\\ServicePhoto\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="RenFilesEntities1-Web.config Connection String" description="" value="metadata=res://*/Data.BarcodeEntities.csdl|res://*/Data.BarcodeEntities.ssdl|res://*/Data.BarcodeEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=localhost;Initial Catalog=RenFiles;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\VSlabs\\Projects\\ServicePhotoSite\\ServicePhoto\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RenFilesEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." value="DefaultConnection_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\VSlabs\\Projects\\ServicePhotoSite\\ServicePhoto\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

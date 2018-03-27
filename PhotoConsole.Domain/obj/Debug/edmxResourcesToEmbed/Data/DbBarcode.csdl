@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RenFilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="InBarcode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InCapture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Capture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BarcodeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="InBarcodes" EntityType="Self.InBarcode" />
+    <EntitySet Name="InCaptures" EntityType="Self.InCapture" />
+    <EntitySet Name="OutInfo" EntityType="RenFilesModel.OutInfo" />
+    <EntitySet Name="IntoCaptures" EntityType="RenFilesModel.IntoCapture" />
+    <EntitySet Name="Categories" EntityType="RenFilesModel.Category" />
+  </EntityContainer>
+  <EntityType Name="OutInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Barlog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Codelog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Datelog" Type="DateTime" Precision="0" />
+    <Property Name="Renlog" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="IntoCapture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ToCapture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dateloginto" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Categories" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+</Schema>

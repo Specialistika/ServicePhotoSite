@@ -1,0 +1,151 @@
+﻿<script type="text/javascript">
+    var grid;
+    function Add() {
+        $("#Id").val("");
+        $("#Barlog").val("");
+        $("#Dateinto").val("");
+        $("#playerModal").modal("show");
+    }
+    function Edit(e) {
+        $("#Id").val(e.data.record.Id);
+        $("#Codelog").val(e.data.record.Codelog);
+        $("#playerModal").modal("show");
+    }
+    function Save() {
+        var player = {
+            Id: $("#Id").val(),
+            Codelog: $("#Codelog").val()
+        };
+        $.ajax({ url: "Save", type: "POST", data: { player: player } })
+            .done(function () {
+                grid.reload();
+                $("#playerModal").modal("hide");
+            })
+            .fail(function () {
+                alert("Unable to save.");
+                $("#playerModal").modal("hide");
+            });
+    }
+    function Remove(e) {
+        $("#IdDel").val(e.data.record.Id);
+        $("#CapDel").val(e.data.record.Codelog);
+        $("#RemoveModal").modal("show");
+    }
+    function RemoveSave() {
+        var Delplayer = {
+            Codelog: $("#CapDel").val()
+        };
+        $.ajax({ url: "Remove", type: "POST", data: { Codelog: Delplayer } })
+            .done(function () {
+                grid.reload();
+                $("#RemoveModal").modal("hide");
+            })
+            .fail(function () {
+                alert("Unable to remove.");
+                $("#RemoveModal").modal("hide");
+            });
+    }
+    function Search() {
+        grid.reload({ searchString: $("#search").val() });
+    }
+
+    $(document).ready(function () {
+        grid = $("#grid").grid({
+            dataKey: "idd",
+            uiLibrary: "bootstrap",
+            columns: [
+                { field: "Id", width: 50, sortable: true },
+                { field: "Barlog", width: 100, title: "Штрих-Код", sortable: true },
+                { field: "Codelog", width: 100, title: "Арт-Код", sortable: true },
+                { field: "Datelog", width: 100, format: "yyyy-mm-dd HH:MM:ss", type: "date", title: "Дата", sortable: true },
+                { field: "Renlog", width: 100, title: "Статус переименования", sortable: true },
+                { title: "", field: "Edit", width: 34, type: "icon", icon: "glyphicon-pencil", tooltip: "Edit", events: { "click": Edit } },
+                { title: "", field: "Remove", width: 34, type: "icon", icon: "glyphicon-remove", tooltip: "Delete", events: { "click": Remove } }
+            ],
+            pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+        });
+        $("#btnAddPlayer").on("click", Add);
+        $("#btnSave").on("click", Save);
+        $("#btnRemove").on("click", RemoveSave);
+        $("#btnSearch").on("click", Search);
+    });
+</script>
+
+<body>
+    <div class="container">
+        <h3>Редактирование главной директории</h3>
+        <p>Поиск ведется по всем колонкам,кроме Id и "Статуса переименования".</p>
+    </div>
+   <div class="container fill">
+            <br />
+            <div class="row">
+                <div class="col-md-3">
+                    @*<form>*@
+                        <div class="input-group">
+                                <input type="text" id="search" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button type="button" id="btnSearch" class="btn btn-primary">Поиск</button>
+                            </span>
+                        </div>
+ @*                  </form>*@
+                </div>
+            </div>
+            <br />
+       <table id="grid" data-source="@Url.Action("GetPlayers")"></table>
+     <br />
+  </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Введите новое имя файла</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="Id">Id</label>
+                                <input type="text" readonly="readonly" class="form-control" id="Id">
+                            </div>
+                            <div class="form-group">
+                                <label for="Codelog">Арт-Код</label>
+                                <input type="text" class="form-control" id="Codelog" placeholder="Введите имя файла">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="btnSave" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="RemoveModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="ModalLabel">Подтвердите удаление файла</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="Id">Id</label>
+                                <input type="text" readonly="readonly" class="form-control" id="IdDel">
+                            </div>
+                            <div class="form-group">
+                                <label for="Codelog">Арт-Код</label>
+                                <input type="text" readonly="readonly" class="form-control" id="CapDel">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="btnRemove" class="btn btn-primary">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>

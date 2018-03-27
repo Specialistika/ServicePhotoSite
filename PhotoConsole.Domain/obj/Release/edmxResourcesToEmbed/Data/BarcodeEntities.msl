@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RenFilesModelStoreContainer" CdmEntityContainer="RenFilesEntities1">
+    <EntitySetMapping Name="InBarcode">
+      <EntityTypeMapping TypeName="RenFilesModel.InBarcode">
+        <MappingFragment StoreEntitySet="InBarcode">
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InCapture">
+      <EntityTypeMapping TypeName="RenFilesModel.InCapture">
+        <MappingFragment StoreEntitySet="InCapture">
+          <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Capture" ColumnName="Capture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntoCapture">
+      <EntityTypeMapping TypeName="RenFilesModel.IntoCapture">
+        <MappingFragment StoreEntitySet="IntoCapture">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ToCapture" ColumnName="ToCapture" />
+          <ScalarProperty Name="Dateloginto" ColumnName="Dateloginto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutInfo">
+      <EntityTypeMapping TypeName="RenFilesModel.OutInfo">
+        <MappingFragment StoreEntitySet="OutInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Barlog" ColumnName="Barlog" />
+          <ScalarProperty Name="Codelog" ColumnName="Codelog" />
+          <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+          <ScalarProperty Name="Renlog" ColumnName="Renlog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="RenFilesModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idd" ColumnName="idd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForWebTest">
+      <EntityTypeMapping TypeName="RenFilesModel.ForWebTest">
+        <MappingFragment StoreEntitySet="ForWebTest">
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="InfoDate" ColumnName="InfoDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Not_inBase">
+      <EntityTypeMapping TypeName="RenFilesModel.Not_inBase">
+        <MappingFragment StoreEntitySet="Not_inBase">
+          <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+          <ScalarProperty Name="Capture" ColumnName="Capture" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutInCapture">
+      <EntityTypeMapping TypeName="RenFilesModel.OutInCapture">
+        <MappingFragment StoreEntitySet="OutInCapture">
+          <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
+          <ScalarProperty Name="Capture" ColumnName="Capture" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorFix">
+      <EntityTypeMapping TypeName="RenFilesModel.ErrorFix">
+        <MappingFragment StoreEntitySet="ErrorFix">
+          <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

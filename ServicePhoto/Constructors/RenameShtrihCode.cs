@@ -46,7 +46,7 @@ namespace ExtractShtrih.Constructors
             {
                 filess.Add(Path.GetFileNameWithoutExtension(file.FullName));
             }
-            using (var db = new RenFilesEntities1())
+            using (var db = new RenFilesEntities())
             {
                 for (int h = 0; h < files.Length; h++)
                 {
@@ -68,7 +68,7 @@ namespace ExtractShtrih.Constructors
         {
             int count_out = 0;
 
-            using (var db = new RenFilesEntities1())
+            using (var db = new RenFilesEntities())
             {
                 for (int m = 0; m < files.Length; m++)
                 {

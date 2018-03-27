@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RenFilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="InBarcode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="InCapture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Capture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dateinto" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="IntoCapture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ToCapture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dateloginto" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="OutInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barlog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Codelog" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Datelog" Type="DateTime" Precision="3" />
+    <Property Name="Renlog" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="RenFilesEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="InBarcode" EntityType="Self.InBarcode" />
+    <EntitySet Name="InCapture" EntityType="Self.InCapture" />
+    <EntitySet Name="IntoCapture" EntityType="Self.IntoCapture" />
+    <EntitySet Name="OutInfo" EntityType="Self.OutInfo" />
+    <EntitySet Name="Categories" EntityType="RenFilesModel.Categories" />
+    <EntitySet Name="ForWebTest" EntityType="RenFilesModel.ForWebTest" />
+    <EntitySet Name="Not_inBase" EntityType="RenFilesModel.Not_inBase" />
+    <EntitySet Name="OutInCapture" EntityType="RenFilesModel.OutInCapture" />
+    <EntitySet Name="ErrorFix" EntityType="RenFilesModel.ErrorFix" />
+  </EntityContainer>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="idd" />
+    </Key>
+    <Property Name="idd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ForWebTest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="InfoDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Data" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Not_inBase">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Capture" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Datelog" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="OutInCapture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Capture" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dateinto" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ErrorFix">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Error" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateInsert" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

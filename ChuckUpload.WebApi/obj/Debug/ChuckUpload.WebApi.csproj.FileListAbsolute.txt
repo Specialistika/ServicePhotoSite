@@ -1,0 +1,12 @@
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Debug\ChuckUpload.WebApi.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Debug\ChuckUpload.WebApi.pdb
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Debug\System.Net.Http.Formatting.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Debug\System.Web.Http.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Debug\System.Net.Http.Formatting.xml
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Debug\System.Web.Http.xml
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Debug\ChuckUpload.WebApi.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Debug\ChuckUpload.WebApi.pdb
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Debug\ChuckUpload.WebApi.csproj.CoreCompileInputs.cache
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\bin\Debug\Newtonsoft.Json.dll
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Debug\ChuckUpload.WebApi.csproj.CopyComplete
+D:\VSlabs\Projects\ServicePhotoSite\ChuckUpload.WebApi\obj\Debug\ChuckUpload.WebApi.csprojResolveAssemblyReference.cache

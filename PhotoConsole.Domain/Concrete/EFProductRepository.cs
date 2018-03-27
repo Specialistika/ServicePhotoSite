@@ -10,11 +10,11 @@ namespace PhotoConsole.Domain.Concrete
 {
     public class EFProductRepository : IProductRepository
     {
-        private RenFilesEntities1 contexts = new RenFilesEntities1();
+        private RenFilesEntities contexts = new RenFilesEntities();
 
-        public IQueryable<IntoCapture> IntoCaptures
+        public IQueryable<ProcessCapture> IntoCaptures
         {
-            get { return contexts.IntoCapture; }
+            get { return contexts.ProcessCapture; }
         }
         public IQueryable<Categories> Category
         {
@@ -28,9 +28,9 @@ namespace PhotoConsole.Domain.Concrete
         {
             get { return contexts.ForWebTest; }
         }
-        public IQueryable<InCapture> InCaptures
+        public IQueryable<UploadCapture> InCaptures
         {
-            get { return contexts.InCapture; }
+            get { return contexts.UploadCapture; }
         }
         public IQueryable<OutInCapture> OutInCapture
         {

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PowerShell.ScriptedProvider</id>
+    <version>0.4</version>
+    <title>PowerShell Scripted Provider Framework</title>
+    <authors>Oisin Grehan</authors>
+    <owners>Oisin Grehan</owners>
+    <licenseUrl>http://www.opensource.org/licenses/ms-rl.html</licenseUrl>
+    <projectUrl>http://psprovider.codeplex.com/</projectUrl>
+    <iconUrl>http://upload.wikimedia.org/wikipedia/en/7/7f/Windows_PowerShell_icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Write your own PowerShell provider using only script, no C# required. 
+
+The provider implementation can modeled by any Windows PowerShell 2.0 Module, which may be pure script, binary or a mix of both.
+
+Examples and docs online at http://psprovider.codeplex.com/</description>
+    <summary>Write your own PowerShell provider using only script, no C# required.</summary>
+  </metadata>
+</package>

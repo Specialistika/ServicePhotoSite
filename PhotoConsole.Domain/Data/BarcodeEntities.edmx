@@ -13,6 +13,14 @@
           <Property Name="id" Type="int" />
           <Property Name="Category" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="ErrorFix">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Error" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateInsert" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="ForWebTest">
           <Key>
             <PropertyRef Name="Id" />
@@ -30,21 +38,13 @@
           <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DateUpdate" Type="datetime" />
         </EntityType>
-        <EntityType Name="InCapture">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Dateinto" Type="datetime" />
-        </EntityType>
-        <EntityType Name="IntoCapture">
+        <EntityType Name="NameZip">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ToCapture" Type="varchar" MaxLength="50" />
-          <Property Name="Dateloginto" Type="datetime" />
+          <Property Name="NamefileZip" Type="varchar" MaxLength="50" />
+          <Property Name="DateTime" Type="datetime" />
         </EntityType>
         <EntityType Name="Not_inBase">
           <Key>
@@ -72,20 +72,88 @@
           <Property Name="Datelog" Type="datetime" />
           <Property Name="Renlog" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RenFiles.dbo.ProcessCapture' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProcessCapture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ToCapture" Type="varchar" MaxLength="50" />
+          <Property Name="DateProcess" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UploadCapture">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_NameZip" Type="int" />
+          <Property Name="Capture" Type="varchar" MaxLength="50" />
+          <Property Name="DateUpload" Type="datetime" />
+          <Property Name="FolderName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_UploadCapture_ToTable">
+          <End Role="NameZip" Type="Self.NameZip" Multiplicity="0..1" />
+          <End Role="UploadCapture" Type="Self.UploadCapture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NameZip">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UploadCapture">
+              <PropertyRef Name="Id_NameZip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="RenFilesModelStoreContainer">
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ErrorFix" EntityType="Self.ErrorFix" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ForWebTest" EntityType="Self.ForWebTest" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InBarcode" EntityType="Self.InBarcode" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="InCapture" EntityType="Self.InCapture" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="IntoCapture" EntityType="Self.IntoCapture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NameZip" EntityType="Self.NameZip" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Not_inBase" EntityType="Self.Not_inBase" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OutInCapture" EntityType="Self.OutInCapture" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OutInfo" EntityType="Self.OutInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UploadCapture" EntityType="Self.UploadCapture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcessCapture" EntityType="Self.ProcessCapture" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProcessCapture].[Id] AS [Id], 
+    [ProcessCapture].[ToCapture] AS [ToCapture], 
+    [ProcessCapture].[DateProcess] AS [DateProcess]
+    FROM [dbo].[ProcessCapture] AS [ProcessCapture]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_UploadCapture_ToTable" Association="Self.FK_UploadCapture_ToTable">
+            <End Role="NameZip" EntitySet="NameZip" />
+            <End Role="UploadCapture" EntitySet="UploadCapture" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="RenFilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="RenFilesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="idd" />
+          </Key>
+          <Property Name="idd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ErrorFix">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Error" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateInsert" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ForWebTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InfoDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="InBarcode">
           <Key>
             <PropertyRef Name="id" />
@@ -95,21 +163,21 @@
           <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DateUpdate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="InCapture">
+        <EntityType Name="Not_inBase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Capture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Datelog" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OutInCapture">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Capture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Dateinto" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="IntoCapture">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ToCapture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Dateloginto" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="OutInfo">
           <Key>
@@ -121,79 +189,120 @@
           <Property Name="Datelog" Type="DateTime" Precision="3" />
           <Property Name="Renlog" Type="Boolean" />
         </EntityType>
-        <EntityContainer Name="RenFilesEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RenFilesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Categories" />
+          <EntitySet Name="ErrorFix" EntityType="Self.ErrorFix" />
+          <EntitySet Name="ForWebTest" EntityType="Self.ForWebTest" />
           <EntitySet Name="InBarcode" EntityType="Self.InBarcode" />
-          <EntitySet Name="InCapture" EntityType="Self.InCapture" />
-          <EntitySet Name="IntoCapture" EntityType="Self.IntoCapture" />
+          <EntitySet Name="Not_inBase" EntityType="Self.Not_inBase" />
+          <EntitySet Name="OutInCapture" EntityType="Self.OutInCapture" />
           <EntitySet Name="OutInfo" EntityType="Self.OutInfo" />
-          <EntitySet Name="Categories" EntityType="RenFilesModel.Categories" />
-          <EntitySet Name="ForWebTest" EntityType="RenFilesModel.ForWebTest" />
-          <EntitySet Name="Not_inBase" EntityType="RenFilesModel.Not_inBase" />
-          <EntitySet Name="OutInCapture" EntityType="RenFilesModel.OutInCapture" />
+          <EntitySet Name="NameZip" EntityType="RenFilesModel.NameZip" />
+          <EntitySet Name="UploadCapture" EntityType="RenFilesModel.UploadCapture" />
+          <EntitySet Name="ProcessCapture" EntityType="RenFilesModel.ProcessCapture" />
+          <AssociationSet Name="FK_UploadCapture_ToTable" Association="RenFilesModel.FK_UploadCapture_ToTable">
+            <End Role="NameZip" EntitySet="NameZip" />
+            <End Role="UploadCapture" EntitySet="UploadCapture" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Categories">
-          <Key>
-            <PropertyRef Name="idd" />
-          </Key>
-          <Property Name="idd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id" Type="Int32" />
-          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="ForWebTest">
+        <EntityType Name="NameZip">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="InfoDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Data" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamefileZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UploadCapture" Relationship="RenFilesModel.FK_UploadCapture_ToTable" FromRole="NameZip" ToRole="UploadCapture" />
         </EntityType>
-        <EntityType Name="Not_inBase">
+        <EntityType Name="UploadCapture">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Capture" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Datelog" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_NameZip" Type="Int32" />
+          <Property Name="Capture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpload" Type="DateTime" Precision="3" />
+          <Property Name="FolderName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NameZip" Relationship="RenFilesModel.FK_UploadCapture_ToTable" FromRole="UploadCapture" ToRole="NameZip" />
         </EntityType>
-        <EntityType Name="OutInCapture">
+        <EntityType Name="ProcessCapture">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Capture" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Dateinto" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToCapture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateProcess" Type="DateTime" Precision="3" />
         </EntityType>
+        <Association Name="FK_UploadCapture_ToTable">
+          <End Type="RenFilesModel.NameZip" Role="NameZip" Multiplicity="0..1" />
+          <End Type="RenFilesModel.UploadCapture" Role="UploadCapture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NameZip">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UploadCapture">
+              <PropertyRef Name="Id_NameZip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RenFilesModelStoreContainer" CdmEntityContainer="RenFilesEntities1">
+        <EntityContainerMapping StorageEntityContainer="RenFilesModelStoreContainer" CdmEntityContainer="RenFilesEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="RenFilesModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="idd" ColumnName="idd" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorFix">
+            <EntityTypeMapping TypeName="RenFilesModel.ErrorFix">
+              <MappingFragment StoreEntitySet="ErrorFix">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+                <ScalarProperty Name="DateInsert" ColumnName="DateInsert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ForWebTest">
+            <EntityTypeMapping TypeName="RenFilesModel.ForWebTest">
+              <MappingFragment StoreEntitySet="ForWebTest">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InfoDate" ColumnName="InfoDate" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="InBarcode">
             <EntityTypeMapping TypeName="RenFilesModel.InBarcode">
               <MappingFragment StoreEntitySet="InBarcode">
-                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Barcode" ColumnName="Barcode" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="InCapture">
-            <EntityTypeMapping TypeName="RenFilesModel.InCapture">
-              <MappingFragment StoreEntitySet="InCapture">
-                <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
+          <EntitySetMapping Name="Not_inBase">
+            <EntityTypeMapping TypeName="RenFilesModel.Not_inBase">
+              <MappingFragment StoreEntitySet="Not_inBase">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Capture" ColumnName="Capture" />
+                <ScalarProperty Name="Datelog" ColumnName="Datelog" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="IntoCapture">
-            <EntityTypeMapping TypeName="RenFilesModel.IntoCapture">
-              <MappingFragment StoreEntitySet="IntoCapture">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ToCapture" ColumnName="ToCapture" />
-                <ScalarProperty Name="Dateloginto" ColumnName="Dateloginto" />
+          <EntitySetMapping Name="OutInCapture">
+            <EntityTypeMapping TypeName="RenFilesModel.OutInCapture">
+              <MappingFragment StoreEntitySet="OutInCapture">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Capture" ColumnName="Capture" />
+                <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -208,43 +317,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="RenFilesModel.Categories">
-              <MappingFragment StoreEntitySet="Categories">
-                <ScalarProperty Name="Category" ColumnName="Category" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idd" ColumnName="idd" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ForWebTest">
-            <EntityTypeMapping TypeName="RenFilesModel.ForWebTest">
-              <MappingFragment StoreEntitySet="ForWebTest">
-                <ScalarProperty Name="Data" ColumnName="Data" />
-                <ScalarProperty Name="InfoDate" ColumnName="InfoDate" />
+          <EntitySetMapping Name="NameZip">
+            <EntityTypeMapping TypeName="RenFilesModel.NameZip">
+              <MappingFragment StoreEntitySet="NameZip">
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="NamefileZip" ColumnName="NamefileZip" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Not_inBase">
-            <EntityTypeMapping TypeName="RenFilesModel.Not_inBase">
-              <MappingFragment StoreEntitySet="Not_inBase">
-                <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+          <EntitySetMapping Name="UploadCapture">
+            <EntityTypeMapping TypeName="RenFilesModel.UploadCapture">
+              <MappingFragment StoreEntitySet="UploadCapture">
+                <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+                <ScalarProperty Name="DateUpload" ColumnName="DateUpload" />
                 <ScalarProperty Name="Capture" ColumnName="Capture" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Id_NameZip" ColumnName="Id_NameZip" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="OutInCapture">
-            <EntityTypeMapping TypeName="RenFilesModel.OutInCapture">
-              <MappingFragment StoreEntitySet="OutInCapture">
-                <ScalarProperty Name="Dateinto" ColumnName="Dateinto" />
-                <ScalarProperty Name="Capture" ColumnName="Capture" />
-                <ScalarProperty Name="id" ColumnName="id" />
+          <EntitySetMapping Name="ProcessCapture">
+            <EntityTypeMapping TypeName="RenFilesModel.ProcessCapture">
+              <MappingFragment StoreEntitySet="ProcessCapture">
+                <ScalarProperty Name="DateProcess" ColumnName="DateProcess" />
+                <ScalarProperty Name="ToCapture" ColumnName="ToCapture" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -258,8 +360,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

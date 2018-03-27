@@ -8,6 +8,7 @@ using System.Web.Routing;
 using UnZipFileForWeb.Infra;
 using System.Web.Http;
 using BundleModule;
+using UploadMVC.WebShow;
 
 namespace UnZipFileForWeb
 {
@@ -16,6 +17,7 @@ namespace UnZipFileForWeb
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);          
             BundleConfig.RegisterBundles(BundleTable.Bundles);

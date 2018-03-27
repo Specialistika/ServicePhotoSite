@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RenFilesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="idd" />
+    </Key>
+    <Property Name="idd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ErrorFix">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Error" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateInsert" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ForWebTest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InfoDate" Type="varchar" MaxLength="50" />
+    <Property Name="Data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InBarcode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InCapture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dateinto" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IntoCapture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToCapture" Type="varchar" MaxLength="50" />
+    <Property Name="Dateloginto" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Not_inBase">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Datelog" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OutInCapture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dateinto" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OutInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barlog" Type="varchar" MaxLength="20" />
+    <Property Name="Codelog" Type="varchar" MaxLength="20" />
+    <Property Name="Datelog" Type="datetime" />
+    <Property Name="Renlog" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="RenFilesModelStoreContainer">
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrorFix" EntityType="Self.ErrorFix" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForWebTest" EntityType="Self.ForWebTest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InBarcode" EntityType="Self.InBarcode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InCapture" EntityType="Self.InCapture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IntoCapture" EntityType="Self.IntoCapture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Not_inBase" EntityType="Self.Not_inBase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutInCapture" EntityType="Self.OutInCapture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutInfo" EntityType="Self.OutInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

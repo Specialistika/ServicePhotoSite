@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-//using Models.ForWeb;
-//using ModelsPageinfo;
 using PhotoConsole.Domain.Abstract;
-using Constructors.PathString;
-using System.IO;
 using PhotoConsole.Domain.Data;
 using PhotoConsole.Domain.Entities;
 using Models.SortHelper;
@@ -35,21 +28,22 @@ namespace Controllers.ForWeb
             DateTime strDate;
             if (repository != null)
             {
-                var maxDate = repository.InCaptures.Max(x => x.Dateinto);
+                var maxDate = repository.InCaptures.Max(x => x.DateUpload);
                 strDate = Convert.ToDateTime(maxDate).AddDays(-60);
             }
             else
             {
                 strDate = DateTime.Now;
             }
-            using (var context = new RenFilesEntities1())
+            using (var context = new RenFilesEntities())
             {
-                var record = (from p in context.InCapture
+                var record = (from p in context.UploadCapture
                                select new InCaptures
                                {
-                                   Id = p.id,
+                                   Id = p.Id,
                                    Capture = p.Capture,
-                                   Dateinto = p.Dateinto,
+                                   Dateinto = p.DateUpload,
+								   FolderName = p.FolderName,
                                }).AsQueryable();
 
                 if (!string.IsNullOrWhiteSpace(searchString))

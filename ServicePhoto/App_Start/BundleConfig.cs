@@ -33,15 +33,38 @@ namespace BundleModule
                       "~/Scripts/bootstrap.min.js",
                       "~/Scripts/grid-0.4.3.js",
                       "~/Scripts/DateFormat.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/UploadFile.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-theme.min.css",
                       "~/Content/grid-0.4.3.min.css",
-                      "~/Content/animate-bottom.css",
+                      //"~/Content/animate-bottom.css",
                       "~/Content/glyphicon-refresh-animate.css"
                       ));
+
+            //bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+            //            "~/Scripts/angular.js",
+            //            "~/Scripts/angular-*",
+            //            //"~/Scripts/bower_components/*",
+            //            "~/Scripts/bower_components/ng-flow/dist/ng-flow-standalone.js",
+            //            "~/Scripts/bower_components/fusty-flow.js/src/*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/angular.js",
+                        "~/Scripts/angular-*",
+                        "~/Scripts/bower_components/ng-flow/dist/ng-flow-standalone.js",
+                        "~/Scripts/bower_components/fusty-flow.js/src/*.js"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                        "~/App/app.js",
+                        "~/App/*.js",
+                        "~/App/components/files.module.js",
+                        "~/App/components/*.js"));
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

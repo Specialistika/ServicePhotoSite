@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Загрузка отредактированных файлов";
+}
+<h2>@ViewBag.Title.</h2>
+
+
+<input type="file" id="UploadForWebFile" multiple="multiple" name="Файл" />
+<hr />
+<a href="#" id="btnUpload" type="submit" class="btn btn-primary">Загрузить</a>
+
+
+
+
+
+@section scripts{
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#btnUpload').click(function () {
+                UploadForWebFile($('#UploadForWebFile')[0].files);
+            }
+            )
+
+        });
+
+
+        function UploadFileChunk(Chunk, FileName, PartCount) {
+            var FD = new FormData();
+            FD.append('file', Chunk, FileName);
+            $.ajax({
+                type: "POST",
+                url: '/ForWeb/UploadForWebMethod',
+                contentType: false,
+                processData: false,
+                data: FD,
+                success: function (FD) { }
+            });
+        }
+
+        function move(TotalParts, PartCount) {
+            var elem = document.getElementById("pleaseWaitDiv");
+            var partframe = 100 / TotalParts;
+            var nextCount = partframe * PartCount;
+            elem.style.width = nextCount + '%';
+            elem.innerHTML = nextCount * 1 + '%';
+        };
+
+        function UploadForWebFile(TargetFile) {
+            // create array to store the buffer chunks
+            var FileChunk = [];
+            // the file object itself that we will work with
+            var file = TargetFile[0];
+            // set up other initial vars
+            var MaxFileSizeMB = 2;
+            var BufferChunkSize = MaxFileSizeMB * (1024 * 1024);
+            var ReadBuffer_Size = 2048;
+            var FileStreamPos = 0;
+            // set the initial chunk length
+            var EndPos = BufferChunkSize;
+            var Size = file.size;
+
+            // add to the FileChunk array until we get to the end of the file
+            while (FileStreamPos < Size) {
+                // "slice" the file from the starting position/offset, to  the required length
+                FileChunk.push(file.slice(FileStreamPos, EndPos));
+                FileStreamPos = EndPos; // jump by the amount read
+                EndPos = FileStreamPos + BufferChunkSize; // set next chunk length
+            }
+            // get total number of "files" we will be sending
+            var TotalParts = FileChunk.length;
+            var PartCount = 0;
+            // loop through, pulling the first item from the array each time and sending it
+            while (chunk = FileChunk.shift()) {
+                PartCount++;
+                var FilePartName = file.name + ".part_" + PartCount + "." + TotalParts;
+                // send the file
+                move(TotalParts, PartCount);
+                UploadFileChunk(chunk, FilePartName, PartCount);
+            }
+        }
+
+
+    </script>
+
+<div class="container">
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped active" id="pleaseWaitDiv" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:1%">
+            80%
+        </div>
+    </div>
+</div>
+}
+
+

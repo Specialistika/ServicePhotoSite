@@ -1,0 +1,1169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PhotoConsole.Domain.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository">
+            <summary>Stub type of PhotoConsole.Domain.Abstract.IProductRepository</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.#ctor">
+            <summary>Initializes a new instance of type StubIProductRepository</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.CategoryGet">
+            <summary>Sets the stub of IProductRepository.get_Category()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.ForWebTestsGet">
+            <summary>Sets the stub of IProductRepository.get_ForWebTests()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.IntoCapturesGet">
+            <summary>Sets the stub of IProductRepository.get_IntoCaptures()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.OutInfosGet">
+            <summary>Sets the stub of IProductRepository.get_OutInfos()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.pcd::PhotoConsole#Domain#Abstract#IProductRepository#Category">
+            <summary>Sets the stub of IProductRepository.get_Category()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.pcd::PhotoConsole#Domain#Abstract#IProductRepository#ForWebTests">
+            <summary>Sets the stub of IProductRepository.get_ForWebTests()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.pcd::PhotoConsole#Domain#Abstract#IProductRepository#IntoCaptures">
+            <summary>Sets the stub of IProductRepository.get_IntoCaptures()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Abstract.Fakes.StubIProductRepository.pcd::PhotoConsole#Domain#Abstract#IProductRepository#OutInfos">
+            <summary>Sets the stub of IProductRepository.get_OutInfos()</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository">
+            <summary>Shim type of PhotoConsole.Domain.Concrete.EFProductRepository</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.#ctor(PhotoConsole.Domain.Concrete.EFProductRepository)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.Bind(PhotoConsole.Domain.Abstract.IProductRepository)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.CategoryGet">
+            <summary>Sets the shim of EFProductRepository.get_Category()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.Constructor">
+            <summary>Sets the shim of EFProductRepository.EFProductRepository()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.ForWebTestsGet">
+            <summary>Sets the shim of EFProductRepository.get_ForWebTests()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.IntoCapturesGet">
+            <summary>Sets the shim of EFProductRepository.get_IntoCaptures()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.OutInfosGet">
+            <summary>Sets the shim of EFProductRepository.get_OutInfos()</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.AllInstances.CategoryGet">
+            <summary>Sets the shim of EFProductRepository.get_Category()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.AllInstances.ForWebTestsGet">
+            <summary>Sets the shim of EFProductRepository.get_ForWebTests()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.AllInstances.IntoCapturesGet">
+            <summary>Sets the shim of EFProductRepository.get_IntoCaptures()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.ShimEFProductRepository.AllInstances.OutInfosGet">
+            <summary>Sets the shim of EFProductRepository.get_OutInfos()</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Concrete.Fakes.StubEFProductRepository">
+            <summary>Stub type of PhotoConsole.Domain.Concrete.EFProductRepository</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Concrete.Fakes.StubEFProductRepository.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Concrete.Fakes.StubEFProductRepository.InitializeStub">
+            <summary>Initializes a new instance of type StubEFProductRepository</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.StubEFProductRepository.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.StubEFProductRepository.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Concrete.Fakes.StubEFProductRepository.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimCategories">
+            <summary>Shim type of PhotoConsole.Domain.Data.Categories</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimCategories.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimCategories.#ctor(PhotoConsole.Domain.Data.Categories)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimCategories.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimCategories.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.CategoryGet">
+            <summary>Sets the shim of Categories.get_Category()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.CategorySetString">
+            <summary>Sets the shim of Categories.set_Category(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.Constructor">
+            <summary>Sets the shim of Categories.Categories()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.idGet">
+            <summary>Sets the shim of Categories.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.idSetNullableOfInt32">
+            <summary>Sets the shim of Categories.set_id(Nullable`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.iddGet">
+            <summary>Sets the shim of Categories.get_idd()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.iddSetInt32">
+            <summary>Sets the shim of Categories.set_idd(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimCategories.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.AllInstances.CategoryGet">
+            <summary>Sets the shim of Categories.get_Category()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.AllInstances.CategorySetString">
+            <summary>Sets the shim of Categories.set_Category(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.AllInstances.idGet">
+            <summary>Sets the shim of Categories.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.AllInstances.idSetNullableOfInt32">
+            <summary>Sets the shim of Categories.set_id(Nullable`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.AllInstances.iddGet">
+            <summary>Sets the shim of Categories.get_idd()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimCategories.AllInstances.iddSetInt32">
+            <summary>Sets the shim of Categories.set_idd(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimForWebTest">
+            <summary>Shim type of PhotoConsole.Domain.Data.ForWebTest</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.#ctor(PhotoConsole.Domain.Data.ForWebTest)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.Constructor">
+            <summary>Sets the shim of ForWebTest.ForWebTest()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.DataGet">
+            <summary>Sets the shim of ForWebTest.get_Data()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.DataSetNullableOfDateTime">
+            <summary>Sets the shim of ForWebTest.set_Data(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.IdGet">
+            <summary>Sets the shim of ForWebTest.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.IdSetInt32">
+            <summary>Sets the shim of ForWebTest.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.InfoDateGet">
+            <summary>Sets the shim of ForWebTest.get_InfoDate()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.InfoDateSetString">
+            <summary>Sets the shim of ForWebTest.set_InfoDate(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.AllInstances.DataGet">
+            <summary>Sets the shim of ForWebTest.get_Data()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.AllInstances.DataSetNullableOfDateTime">
+            <summary>Sets the shim of ForWebTest.set_Data(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.AllInstances.IdGet">
+            <summary>Sets the shim of ForWebTest.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.AllInstances.IdSetInt32">
+            <summary>Sets the shim of ForWebTest.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.AllInstances.InfoDateGet">
+            <summary>Sets the shim of ForWebTest.get_InfoDate()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimForWebTest.AllInstances.InfoDateSetString">
+            <summary>Sets the shim of ForWebTest.set_InfoDate(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimInBarcode">
+            <summary>Shim type of PhotoConsole.Domain.Data.InBarcode</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.#ctor(PhotoConsole.Domain.Data.InBarcode)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.BarcodeGet">
+            <summary>Sets the shim of InBarcode.get_Barcode()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.BarcodeSetString">
+            <summary>Sets the shim of InBarcode.set_Barcode(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.CodeGet">
+            <summary>Sets the shim of InBarcode.get_Code()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.CodeSetString">
+            <summary>Sets the shim of InBarcode.set_Code(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.Constructor">
+            <summary>Sets the shim of InBarcode.InBarcode()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.idGet">
+            <summary>Sets the shim of InBarcode.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.idSetInt32">
+            <summary>Sets the shim of InBarcode.set_id(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.AllInstances.BarcodeGet">
+            <summary>Sets the shim of InBarcode.get_Barcode()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.AllInstances.BarcodeSetString">
+            <summary>Sets the shim of InBarcode.set_Barcode(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.AllInstances.CodeGet">
+            <summary>Sets the shim of InBarcode.get_Code()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.AllInstances.CodeSetString">
+            <summary>Sets the shim of InBarcode.set_Code(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.AllInstances.idGet">
+            <summary>Sets the shim of InBarcode.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInBarcode.AllInstances.idSetInt32">
+            <summary>Sets the shim of InBarcode.set_id(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimInCapture">
+            <summary>Shim type of PhotoConsole.Domain.Data.InCapture</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInCapture.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInCapture.#ctor(PhotoConsole.Domain.Data.InCapture)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInCapture.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimInCapture.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.CaptureGet">
+            <summary>Sets the shim of InCapture.get_Capture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.CaptureSetString">
+            <summary>Sets the shim of InCapture.set_Capture(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.Constructor">
+            <summary>Sets the shim of InCapture.InCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.idGet">
+            <summary>Sets the shim of InCapture.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.idSetInt32">
+            <summary>Sets the shim of InCapture.set_id(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimInCapture.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.AllInstances.CaptureGet">
+            <summary>Sets the shim of InCapture.get_Capture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.AllInstances.CaptureSetString">
+            <summary>Sets the shim of InCapture.set_Capture(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.AllInstances.idGet">
+            <summary>Sets the shim of InCapture.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimInCapture.AllInstances.idSetInt32">
+            <summary>Sets the shim of InCapture.set_id(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture">
+            <summary>Shim type of PhotoConsole.Domain.Data.IntoCapture</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.#ctor(PhotoConsole.Domain.Data.IntoCapture)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.Constructor">
+            <summary>Sets the shim of IntoCapture.IntoCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.DatelogintoGet">
+            <summary>Sets the shim of IntoCapture.get_Dateloginto()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.DatelogintoSetNullableOfDateTime">
+            <summary>Sets the shim of IntoCapture.set_Dateloginto(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.IdGet">
+            <summary>Sets the shim of IntoCapture.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.IdSetInt32">
+            <summary>Sets the shim of IntoCapture.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.ToCaptureGet">
+            <summary>Sets the shim of IntoCapture.get_ToCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.ToCaptureSetString">
+            <summary>Sets the shim of IntoCapture.set_ToCapture(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.AllInstances.DatelogintoGet">
+            <summary>Sets the shim of IntoCapture.get_Dateloginto()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.AllInstances.DatelogintoSetNullableOfDateTime">
+            <summary>Sets the shim of IntoCapture.set_Dateloginto(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.AllInstances.IdGet">
+            <summary>Sets the shim of IntoCapture.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.AllInstances.IdSetInt32">
+            <summary>Sets the shim of IntoCapture.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.AllInstances.ToCaptureGet">
+            <summary>Sets the shim of IntoCapture.get_ToCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimIntoCapture.AllInstances.ToCaptureSetString">
+            <summary>Sets the shim of IntoCapture.set_ToCapture(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimOutInfo">
+            <summary>Shim type of PhotoConsole.Domain.Data.OutInfo</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.#ctor(PhotoConsole.Domain.Data.OutInfo)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.BarlogGet">
+            <summary>Sets the shim of OutInfo.get_Barlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.BarlogSetString">
+            <summary>Sets the shim of OutInfo.set_Barlog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.CodelogGet">
+            <summary>Sets the shim of OutInfo.get_Codelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.CodelogSetString">
+            <summary>Sets the shim of OutInfo.set_Codelog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.Constructor">
+            <summary>Sets the shim of OutInfo.OutInfo()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.DatelogGet">
+            <summary>Sets the shim of OutInfo.get_Datelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.DatelogSetNullableOfDateTime">
+            <summary>Sets the shim of OutInfo.set_Datelog(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.IdGet">
+            <summary>Sets the shim of OutInfo.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.IdSetInt32">
+            <summary>Sets the shim of OutInfo.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.RenlogGet">
+            <summary>Sets the shim of OutInfo.get_Renlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.RenlogSetNullableOfBoolean">
+            <summary>Sets the shim of OutInfo.set_Renlog(Nullable`1&lt;Boolean&gt; value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.BarlogGet">
+            <summary>Sets the shim of OutInfo.get_Barlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.BarlogSetString">
+            <summary>Sets the shim of OutInfo.set_Barlog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.CodelogGet">
+            <summary>Sets the shim of OutInfo.get_Codelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.CodelogSetString">
+            <summary>Sets the shim of OutInfo.set_Codelog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.DatelogGet">
+            <summary>Sets the shim of OutInfo.get_Datelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.DatelogSetNullableOfDateTime">
+            <summary>Sets the shim of OutInfo.set_Datelog(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.IdGet">
+            <summary>Sets the shim of OutInfo.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.IdSetInt32">
+            <summary>Sets the shim of OutInfo.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.RenlogGet">
+            <summary>Sets the shim of OutInfo.get_Renlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimOutInfo.AllInstances.RenlogSetNullableOfBoolean">
+            <summary>Sets the shim of OutInfo.set_Renlog(Nullable`1&lt;Boolean&gt; value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1">
+            <summary>Shim type of PhotoConsole.Domain.Data.RenFilesEntities1</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.#ctor(PhotoConsole.Domain.Data.RenFilesEntities1)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.Bind(System.Data.Entity.Infrastructure.IObjectContextAdapter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.CategoriesGet">
+            <summary>Sets the shim of RenFilesEntities1.get_Categories()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.CategoriesSetDbSetOfCategories">
+            <summary>Sets the shim of RenFilesEntities1.set_Categories(DbSet`1&lt;Categories&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.Constructor">
+            <summary>Sets the shim of RenFilesEntities1.RenFilesEntities1()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.ForWebTestGet">
+            <summary>Sets the shim of RenFilesEntities1.get_ForWebTest()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.ForWebTestSetDbSetOfForWebTest">
+            <summary>Sets the shim of RenFilesEntities1.set_ForWebTest(DbSet`1&lt;ForWebTest&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.InBarcodeGet">
+            <summary>Sets the shim of RenFilesEntities1.get_InBarcode()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.InBarcodeSetDbSetOfInBarcode">
+            <summary>Sets the shim of RenFilesEntities1.set_InBarcode(DbSet`1&lt;InBarcode&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.InCaptureGet">
+            <summary>Sets the shim of RenFilesEntities1.get_InCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.InCaptureSetDbSetOfInCapture">
+            <summary>Sets the shim of RenFilesEntities1.set_InCapture(DbSet`1&lt;InCapture&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.IntoCaptureGet">
+            <summary>Sets the shim of RenFilesEntities1.get_IntoCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.IntoCaptureSetDbSetOfIntoCapture">
+            <summary>Sets the shim of RenFilesEntities1.set_IntoCapture(DbSet`1&lt;IntoCapture&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.OnModelCreatingDbModelBuilder">
+            <summary>Sets the shim of RenFilesEntities1.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.OutInfoGet">
+            <summary>Sets the shim of RenFilesEntities1.get_OutInfo()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.OutInfoSetDbSetOfOutInfo">
+            <summary>Sets the shim of RenFilesEntities1.set_OutInfo(DbSet`1&lt;OutInfo&gt; value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.CategoriesGet">
+            <summary>Sets the shim of RenFilesEntities1.get_Categories()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.CategoriesSetDbSetOfCategories">
+            <summary>Sets the shim of RenFilesEntities1.set_Categories(DbSet`1&lt;Categories&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.ForWebTestGet">
+            <summary>Sets the shim of RenFilesEntities1.get_ForWebTest()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.ForWebTestSetDbSetOfForWebTest">
+            <summary>Sets the shim of RenFilesEntities1.set_ForWebTest(DbSet`1&lt;ForWebTest&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.InBarcodeGet">
+            <summary>Sets the shim of RenFilesEntities1.get_InBarcode()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.InBarcodeSetDbSetOfInBarcode">
+            <summary>Sets the shim of RenFilesEntities1.set_InBarcode(DbSet`1&lt;InBarcode&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.InCaptureGet">
+            <summary>Sets the shim of RenFilesEntities1.get_InCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.InCaptureSetDbSetOfInCapture">
+            <summary>Sets the shim of RenFilesEntities1.set_InCapture(DbSet`1&lt;InCapture&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.IntoCaptureGet">
+            <summary>Sets the shim of RenFilesEntities1.get_IntoCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.IntoCaptureSetDbSetOfIntoCapture">
+            <summary>Sets the shim of RenFilesEntities1.set_IntoCapture(DbSet`1&lt;IntoCapture&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.OnModelCreatingDbModelBuilder">
+            <summary>Sets the shim of RenFilesEntities1.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.OutInfoGet">
+            <summary>Sets the shim of RenFilesEntities1.get_OutInfo()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.ShimRenFilesEntities1.AllInstances.OutInfoSetDbSetOfOutInfo">
+            <summary>Sets the shim of RenFilesEntities1.set_OutInfo(DbSet`1&lt;OutInfo&gt; value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.StubCategories">
+            <summary>Stub type of PhotoConsole.Domain.Data.Categories</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubCategories.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubCategories.InitializeStub">
+            <summary>Initializes a new instance of type StubCategories</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubCategories.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubCategories.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubCategories.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.StubForWebTest">
+            <summary>Stub type of PhotoConsole.Domain.Data.ForWebTest</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubForWebTest.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubForWebTest.InitializeStub">
+            <summary>Initializes a new instance of type StubForWebTest</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubForWebTest.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubForWebTest.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubForWebTest.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.StubInBarcode">
+            <summary>Stub type of PhotoConsole.Domain.Data.InBarcode</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubInBarcode.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubInBarcode.InitializeStub">
+            <summary>Initializes a new instance of type StubInBarcode</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubInBarcode.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubInBarcode.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubInBarcode.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.StubInCapture">
+            <summary>Stub type of PhotoConsole.Domain.Data.InCapture</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubInCapture.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubInCapture.InitializeStub">
+            <summary>Initializes a new instance of type StubInCapture</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubInCapture.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubInCapture.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubInCapture.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.StubIntoCapture">
+            <summary>Stub type of PhotoConsole.Domain.Data.IntoCapture</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubIntoCapture.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubIntoCapture.InitializeStub">
+            <summary>Initializes a new instance of type StubIntoCapture</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubIntoCapture.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubIntoCapture.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubIntoCapture.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.StubOutInfo">
+            <summary>Stub type of PhotoConsole.Domain.Data.OutInfo</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubOutInfo.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubOutInfo.InitializeStub">
+            <summary>Initializes a new instance of type StubOutInfo</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubOutInfo.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubOutInfo.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubOutInfo.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1">
+            <summary>Stub type of PhotoConsole.Domain.Data.RenFilesEntities1</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.AttachBackingFieldToCategories">
+            <summary>Attaches delegates to emulate StubRenFilesEntities1.Categories as a property with a backing field.</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.AttachBackingFieldToForWebTest">
+            <summary>Attaches delegates to emulate StubRenFilesEntities1.ForWebTest as a property with a backing field.</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.AttachBackingFieldToInBarcode">
+            <summary>Attaches delegates to emulate StubRenFilesEntities1.InBarcode as a property with a backing field.</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.AttachBackingFieldToInCapture">
+            <summary>Attaches delegates to emulate StubRenFilesEntities1.InCapture as a property with a backing field.</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.AttachBackingFieldToIntoCapture">
+            <summary>Attaches delegates to emulate StubRenFilesEntities1.IntoCapture as a property with a backing field.</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.AttachBackingFieldToOutInfo">
+            <summary>Attaches delegates to emulate StubRenFilesEntities1.OutInfo as a property with a backing field.</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.CategoriesGet">
+            <summary>Sets the stub of RenFilesEntities1.get_Categories()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.CategoriesSetDbSetOfCategories">
+            <summary>Sets the stub of RenFilesEntities1.set_Categories(DbSet`1&lt;Categories&gt; value)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.Dispose(System.Boolean)">
+            <summary>Sets the stub of DbContext.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.DisposeBoolean">
+            <summary>Sets the stub of DbContext.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.Equals(System.Object)">
+            <summary>Sets the stub of DbContext.Equals(Object obj)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.EqualsObject">
+            <summary>Sets the stub of DbContext.Equals(Object obj)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ForWebTestGet">
+            <summary>Sets the stub of RenFilesEntities1.get_ForWebTest()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ForWebTestSetDbSetOfForWebTest">
+            <summary>Sets the stub of RenFilesEntities1.set_ForWebTest(DbSet`1&lt;ForWebTest&gt; value)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.GetHashCode">
+            <summary>Sets the stub of DbContext.GetHashCode()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.GetHashCode01">
+            <summary>Sets the stub of DbContext.GetHashCode()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InBarcodeGet">
+            <summary>Sets the stub of RenFilesEntities1.get_InBarcode()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InBarcodeSetDbSetOfInBarcode">
+            <summary>Sets the stub of RenFilesEntities1.set_InBarcode(DbSet`1&lt;InBarcode&gt; value)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InCaptureGet">
+            <summary>Sets the stub of RenFilesEntities1.get_InCapture()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InCaptureSetDbSetOfInCapture">
+            <summary>Sets the stub of RenFilesEntities1.set_InCapture(DbSet`1&lt;InCapture&gt; value)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InitializeStub">
+            <summary>Initializes a new instance of type StubRenFilesEntities1</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.IntoCaptureGet">
+            <summary>Sets the stub of RenFilesEntities1.get_IntoCapture()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.IntoCaptureSetDbSetOfIntoCapture">
+            <summary>Sets the stub of RenFilesEntities1.set_IntoCapture(DbSet`1&lt;IntoCapture&gt; value)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>Sets the stub of RenFilesEntities1.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.OnModelCreatingDbModelBuilder">
+            <summary>Sets the stub of RenFilesEntities1.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.OutInfoGet">
+            <summary>Sets the stub of RenFilesEntities1.get_OutInfo()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.OutInfoSetDbSetOfOutInfo">
+            <summary>Sets the stub of RenFilesEntities1.set_OutInfo(DbSet`1&lt;OutInfo&gt; value)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.SaveChanges">
+            <summary>Sets the stub of DbContext.SaveChanges()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.SaveChanges01">
+            <summary>Sets the stub of DbContext.SaveChanges()</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.SaveChangesAsync">
+            <summary>Sets the stub of DbContext.SaveChangesAsync()</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>Sets the stub of DbContext.SaveChangesAsync(CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.SaveChangesAsync01">
+            <summary>Sets the stub of DbContext.SaveChangesAsync()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.SaveChangesAsyncCancellationToken">
+            <summary>Sets the stub of DbContext.SaveChangesAsync(CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ShouldValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry)">
+            <summary>Sets the stub of DbContext.ShouldValidateEntity(DbEntityEntry entityEntry)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ShouldValidateEntityDbEntityEntry">
+            <summary>Sets the stub of DbContext.ShouldValidateEntity(DbEntityEntry entityEntry)</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ToString">
+            <summary>Sets the stub of DbContext.ToString()</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ToString01">
+            <summary>Sets the stub of DbContext.ToString()</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry,System.Collections.Generic.IDictionary{System.Object,System.Object})">
+            <summary>Sets the stub of DbContext.ValidateEntity(DbEntityEntry entityEntry, IDictionary`2&lt;Object,Object&gt; items)</summary>
+        </member>
+        <member name="F:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ValidateEntityDbEntityEntryIDictionaryOfObjectObject">
+            <summary>Sets the stub of DbContext.ValidateEntity(DbEntityEntry entityEntry, IDictionary`2&lt;Object,Object&gt; items)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.Categories">
+            <summary>Sets the stub of RenFilesEntities1.get_Categories()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.ForWebTest">
+            <summary>Sets the stub of RenFilesEntities1.get_ForWebTest()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InBarcode">
+            <summary>Sets the stub of RenFilesEntities1.get_InBarcode()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InCapture">
+            <summary>Sets the stub of RenFilesEntities1.get_InCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.IntoCapture">
+            <summary>Sets the stub of RenFilesEntities1.get_IntoCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Data.Fakes.StubRenFilesEntities1.OutInfo">
+            <summary>Sets the stub of RenFilesEntities1.get_OutInfo()</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimCategories">
+            <summary>Shim type of PhotoConsole.Domain.Entities.Categories</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimCategories.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimCategories.#ctor(PhotoConsole.Domain.Entities.Categories)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimCategories.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimCategories.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.CategoryGet">
+            <summary>Sets the shim of Categories.get_Category()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.CategorySetString">
+            <summary>Sets the shim of Categories.set_Category(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.Constructor">
+            <summary>Sets the shim of Categories.Categories()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.idGet">
+            <summary>Sets the shim of Categories.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.idSetInt32">
+            <summary>Sets the shim of Categories.set_id(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimCategories.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.AllInstances.CategoryGet">
+            <summary>Sets the shim of Categories.get_Category()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.AllInstances.CategorySetString">
+            <summary>Sets the shim of Categories.set_Category(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.AllInstances.idGet">
+            <summary>Sets the shim of Categories.get_id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimCategories.AllInstances.idSetInt32">
+            <summary>Sets the shim of Categories.set_id(Int32 value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest">
+            <summary>Shim type of PhotoConsole.Domain.Entities.ForWebTest</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.#ctor(PhotoConsole.Domain.Entities.ForWebTest)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.Constructor">
+            <summary>Sets the shim of ForWebTest.ForWebTest()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.DataGet">
+            <summary>Sets the shim of ForWebTest.get_Data()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.DataSetNullableOfDateTime">
+            <summary>Sets the shim of ForWebTest.set_Data(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.IdGet">
+            <summary>Sets the shim of ForWebTest.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.IdSetInt32">
+            <summary>Sets the shim of ForWebTest.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.InfoDateGet">
+            <summary>Sets the shim of ForWebTest.get_InfoDate()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.InfoDateSetString">
+            <summary>Sets the shim of ForWebTest.set_InfoDate(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.AllInstances.DataGet">
+            <summary>Sets the shim of ForWebTest.get_Data()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.AllInstances.DataSetNullableOfDateTime">
+            <summary>Sets the shim of ForWebTest.set_Data(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.AllInstances.IdGet">
+            <summary>Sets the shim of ForWebTest.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.AllInstances.IdSetInt32">
+            <summary>Sets the shim of ForWebTest.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.AllInstances.InfoDateGet">
+            <summary>Sets the shim of ForWebTest.get_InfoDate()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimForWebTest.AllInstances.InfoDateSetString">
+            <summary>Sets the shim of ForWebTest.set_InfoDate(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap">
+            <summary>Shim type of PhotoConsole.Domain.Entities.IntoCap</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.#ctor(PhotoConsole.Domain.Entities.IntoCap)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.Constructor">
+            <summary>Sets the shim of IntoCap.IntoCap()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.DatelogintoGet">
+            <summary>Sets the shim of IntoCap.get_Dateloginto()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.DatelogintoSetDateTime">
+            <summary>Sets the shim of IntoCap.set_Dateloginto(DateTime value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.IdGet">
+            <summary>Sets the shim of IntoCap.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.IdSetInt32">
+            <summary>Sets the shim of IntoCap.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.ToCaptureGet">
+            <summary>Sets the shim of IntoCap.get_ToCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.ToCaptureSetString">
+            <summary>Sets the shim of IntoCap.set_ToCapture(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.AllInstances.DatelogintoGet">
+            <summary>Sets the shim of IntoCap.get_Dateloginto()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.AllInstances.DatelogintoSetDateTime">
+            <summary>Sets the shim of IntoCap.set_Dateloginto(DateTime value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.AllInstances.IdGet">
+            <summary>Sets the shim of IntoCap.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.AllInstances.IdSetInt32">
+            <summary>Sets the shim of IntoCap.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.AllInstances.ToCaptureGet">
+            <summary>Sets the shim of IntoCap.get_ToCapture()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimIntoCap.AllInstances.ToCaptureSetString">
+            <summary>Sets the shim of IntoCap.set_ToCapture(String value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo">
+            <summary>Shim type of PhotoConsole.Domain.Entities.OutInfo</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.#ctor(PhotoConsole.Domain.Entities.OutInfo)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.BarlogGet">
+            <summary>Sets the shim of OutInfo.get_Barlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.BarlogSetString">
+            <summary>Sets the shim of OutInfo.set_Barlog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.CodelogGet">
+            <summary>Sets the shim of OutInfo.get_Codelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.CodelogSetString">
+            <summary>Sets the shim of OutInfo.set_Codelog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.Constructor">
+            <summary>Sets the shim of OutInfo.OutInfo()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.DatelogGet">
+            <summary>Sets the shim of OutInfo.get_Datelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.DatelogSetNullableOfDateTime">
+            <summary>Sets the shim of OutInfo.set_Datelog(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.IdGet">
+            <summary>Sets the shim of OutInfo.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.IdSetInt32">
+            <summary>Sets the shim of OutInfo.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.RenlogGet">
+            <summary>Sets the shim of OutInfo.get_Renlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.RenlogSetNullableOfBoolean">
+            <summary>Sets the shim of OutInfo.set_Renlog(Nullable`1&lt;Boolean&gt; value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.BarlogGet">
+            <summary>Sets the shim of OutInfo.get_Barlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.BarlogSetString">
+            <summary>Sets the shim of OutInfo.set_Barlog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.CodelogGet">
+            <summary>Sets the shim of OutInfo.get_Codelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.CodelogSetString">
+            <summary>Sets the shim of OutInfo.set_Codelog(String value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.DatelogGet">
+            <summary>Sets the shim of OutInfo.get_Datelog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.DatelogSetNullableOfDateTime">
+            <summary>Sets the shim of OutInfo.set_Datelog(Nullable`1&lt;DateTime&gt; value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.IdGet">
+            <summary>Sets the shim of OutInfo.get_Id()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.IdSetInt32">
+            <summary>Sets the shim of OutInfo.set_Id(Int32 value)</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.RenlogGet">
+            <summary>Sets the shim of OutInfo.get_Renlog()</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.ShimOutInfo.AllInstances.RenlogSetNullableOfBoolean">
+            <summary>Sets the shim of OutInfo.set_Renlog(Nullable`1&lt;Boolean&gt; value)</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.StubCategories">
+            <summary>Stub type of PhotoConsole.Domain.Entities.Categories</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubCategories.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubCategories.InitializeStub">
+            <summary>Initializes a new instance of type StubCategories</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubCategories.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubCategories.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubCategories.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.StubForWebTest">
+            <summary>Stub type of PhotoConsole.Domain.Entities.ForWebTest</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubForWebTest.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubForWebTest.InitializeStub">
+            <summary>Initializes a new instance of type StubForWebTest</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubForWebTest.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubForWebTest.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubForWebTest.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.StubIntoCap">
+            <summary>Stub type of PhotoConsole.Domain.Entities.IntoCap</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubIntoCap.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubIntoCap.InitializeStub">
+            <summary>Initializes a new instance of type StubIntoCap</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubIntoCap.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubIntoCap.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubIntoCap.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:PhotoConsole.Domain.Entities.Fakes.StubOutInfo">
+            <summary>Stub type of PhotoConsole.Domain.Entities.OutInfo</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubOutInfo.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:PhotoConsole.Domain.Entities.Fakes.StubOutInfo.InitializeStub">
+            <summary>Initializes a new instance of type StubOutInfo</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubOutInfo.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubOutInfo.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:PhotoConsole.Domain.Entities.Fakes.StubOutInfo.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

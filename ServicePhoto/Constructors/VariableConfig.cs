@@ -41,5 +41,9 @@ namespace Constructors.PathString
         {
             get { return (string)ConfigPath.GetAppSetting(typeof(string), "fileProductSup"); }
         }
-    }
+		public static string MinePath
+		{
+			get { return (string)ConfigPath.GetAppSetting(typeof(string), "MinePath"); }
+		}
+	}
 }

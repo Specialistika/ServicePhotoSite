@@ -9,7 +9,6 @@ namespace Repair.context
 {
     public class RapairController : Controller
     {
-        //protected IntoCap context = new IntoCap();
-        protected RenFilesEntities1 context = new RenFilesEntities1();
+        protected RenFilesEntities context = new RenFilesEntities();
     }
 }

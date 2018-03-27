@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RenFilesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="OutInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barlog" Type="varchar" MaxLength="20" />
+    <Property Name="Codelog" Type="varchar" MaxLength="20" />
+    <Property Name="Datelog" Type="date" />
+    <Property Name="Renlog" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="RenFilesModelStoreContainer">
+    <EntitySet Name="OutInfo" EntityType="Self.OutInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

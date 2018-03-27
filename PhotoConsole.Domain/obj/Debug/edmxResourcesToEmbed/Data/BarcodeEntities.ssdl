@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RenFilesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="idd" />
+    </Key>
+    <Property Name="idd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ErrorFix">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Error" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateInsert" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ForWebTest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InfoDate" Type="varchar" MaxLength="50" />
+    <Property Name="Data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InBarcode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barcode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NameZip">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamefileZip" Type="varchar" MaxLength="50" />
+    <Property Name="DateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Not_inBase">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Datelog" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OutInCapture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Capture" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dateinto" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OutInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barlog" Type="varchar" MaxLength="20" />
+    <Property Name="Codelog" Type="varchar" MaxLength="20" />
+    <Property Name="Datelog" Type="datetime" />
+    <Property Name="Renlog" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RenFiles.dbo.ProcessCapture' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProcessCapture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToCapture" Type="varchar" MaxLength="50" />
+    <Property Name="DateProcess" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UploadCapture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_NameZip" Type="int" />
+    <Property Name="Capture" Type="varchar" MaxLength="50" />
+    <Property Name="DateUpload" Type="datetime" />
+    <Property Name="FolderName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_UploadCapture_ToTable">
+    <End Role="NameZip" Type="Self.NameZip" Multiplicity="0..1" />
+    <End Role="UploadCapture" Type="Self.UploadCapture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NameZip">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UploadCapture">
+        <PropertyRef Name="Id_NameZip" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RenFilesModelStoreContainer">
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrorFix" EntityType="Self.ErrorFix" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForWebTest" EntityType="Self.ForWebTest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InBarcode" EntityType="Self.InBarcode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NameZip" EntityType="Self.NameZip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Not_inBase" EntityType="Self.Not_inBase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutInCapture" EntityType="Self.OutInCapture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutInfo" EntityType="Self.OutInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UploadCapture" EntityType="Self.UploadCapture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProcessCapture" EntityType="Self.ProcessCapture" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ProcessCapture].[Id] AS [Id], 
+    [ProcessCapture].[ToCapture] AS [ToCapture], 
+    [ProcessCapture].[DateProcess] AS [DateProcess]
+    FROM [dbo].[ProcessCapture] AS [ProcessCapture]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_UploadCapture_ToTable" Association="Self.FK_UploadCapture_ToTable">
+      <End Role="NameZip" EntitySet="NameZip" />
+      <End Role="UploadCapture" EntitySet="UploadCapture" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

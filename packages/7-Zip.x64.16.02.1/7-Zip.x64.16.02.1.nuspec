@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>7-Zip.x64</id>
+    <version>16.02.1</version>
+    <title>7-Zip Command Line Version</title>
+    <authors>Igor Pavlov</authors>
+    <owners>Igor Pavlov</owners>
+    <licenseUrl>http://www.7-zip.org/license.txt</licenseUrl>
+    <projectUrl>http://www.7-zip.org/</projectUrl>
+    <iconUrl>http://www.7-zip.org/7ziplogo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>7-Zip is a file archiver with a high compression ratio.</description>
+    <summary />
+    <releaseNotes>updated to 16.02 (x64)</releaseNotes>
+    <language>en-US</language>
+    <tags>7z 7zip 7-Zip zip</tags>
+  </metadata>
+</package>

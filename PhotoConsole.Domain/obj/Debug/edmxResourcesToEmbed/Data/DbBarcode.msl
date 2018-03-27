@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RenFilesModelStoreContainer" CdmEntityContainer="BarcodeEntities">
+    <EntitySetMapping Name="OutInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(RenFilesModel.OutInfo)">
+        <MappingFragment StoreEntitySet="OutInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Barlog" ColumnName="Barlog" />
+          <ScalarProperty Name="Codelog" ColumnName="Codelog" />
+          <ScalarProperty Name="Datelog" ColumnName="Datelog" />
+          <ScalarProperty Name="Renlog" ColumnName="Renlog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
