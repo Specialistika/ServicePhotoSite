@@ -30,6 +30,6 @@ namespace UnZipFileForWeb.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<PhotoConsole.Domain.Entities.IntoCap> IntoCaps { get; set; }
+        //public System.Data.Entity.DbSet<PhotoConsole.Domain.Entities.IntoCapture> IntoCaps { get; set; }
     }
 }

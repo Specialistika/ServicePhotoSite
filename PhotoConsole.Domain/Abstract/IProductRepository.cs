@@ -10,11 +10,11 @@ namespace PhotoConsole.Domain.Abstract
 {
     public interface IProductRepository
     {
-        IQueryable<IntoCapture> IntoCaptures { get; }
+        IQueryable<ProcessCapture> IntoCaptures { get; }
         IQueryable<Categories> Category { get; }
         IQueryable<OutInfo> OutInfos { get; }
         IQueryable<ForWebTest> ForWebTests { get; }
-        IQueryable<InCapture> InCaptures { get; }
+        IQueryable<UploadCapture> InCaptures { get; }
         IQueryable<OutInCapture> OutInCapture { get; }
         IQueryable<Not_inBase> Not_inBases { get; }
         IQueryable<InBarcode> InBarcodes { get; }

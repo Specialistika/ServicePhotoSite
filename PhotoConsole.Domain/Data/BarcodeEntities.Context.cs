@@ -13,10 +13,10 @@ namespace PhotoConsole.Domain.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RenFilesEntities1 : DbContext
+    public partial class RenFilesEntities : DbContext
     {
-        public RenFilesEntities1()
-            : base("name=RenFilesEntities1")
+        public RenFilesEntities()
+            : base("name=RenFilesEntities")
         {
         }
     
@@ -25,13 +25,15 @@ namespace PhotoConsole.Domain.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<InBarcode> InBarcode { get; set; }
-        public virtual DbSet<InCapture> InCapture { get; set; }
-        public virtual DbSet<IntoCapture> IntoCapture { get; set; }
-        public virtual DbSet<OutInfo> OutInfo { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<ErrorFix> ErrorFix { get; set; }
         public virtual DbSet<ForWebTest> ForWebTest { get; set; }
+        public virtual DbSet<InBarcode> InBarcode { get; set; }
         public virtual DbSet<Not_inBase> Not_inBase { get; set; }
         public virtual DbSet<OutInCapture> OutInCapture { get; set; }
+        public virtual DbSet<OutInfo> OutInfo { get; set; }
+        public virtual DbSet<NameZip> NameZip { get; set; }
+        public virtual DbSet<UploadCapture> UploadCapture { get; set; }
+        public virtual DbSet<ProcessCapture> ProcessCapture { get; set; }
     }
 }

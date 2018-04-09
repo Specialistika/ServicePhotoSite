@@ -14,7 +14,7 @@ namespace Constructors.NotRenameFiles
         private DateTime date = DateTime.Now;
         public List<Not_inBases> WithoutRenFilesData(int? page, int? limit, string sortBy, string direction, out int total)
         {
-            using (var context = new RenFilesEntities1())
+            using (var context = new RenFilesEntities())
             {
                 var RenFilesRecords = (from p in context.Not_inBase
                                where p.Datelog > date.Date

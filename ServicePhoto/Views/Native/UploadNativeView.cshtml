@@ -1,76 +1,23 @@
-﻿@{
-    ViewBag.Title = "Загрузка необработанных файлов";
-}
-<h2>@ViewBag.Title.</h2>
-
-
-<input type="file" id="UploadNativeFile" multiple="multiple" name="Файл" />
-<hr />
-<a href="#" id="btnUpload" type="submit" class="btn btn-primary">Загрузить</a>
-
-
-
-
-@section scripts{
-
-    <script>
-
-
-
+﻿    <script>
+        var NativeDir = 'NativeDir';
+        var ForWebDir = 'ForWebDir';
+        var MobileDir = 'MobileDir';
         $(document).ready(function () {
-
-            $('#btnUpload').click(function () {
-                UploadNativeFile($('#UploadNativeFile')[0].files);
-            }
-            )
-
+            $('#uploadFile').click(function () {
+                    var elem = document.getElementById("pleaseWaitDiv");
+                    elem.style.width = 1 + '%';
+                    elem.innerHTML = 1 + '%';
+            })
+            $('#btnUploadNative').click(function () {
+                UploadFile($('#uploadFile')[0].files, NativeDir);
+            })
+            $('#btnUploadForWeb').click(function () {
+                UploadFile($('#uploadFile')[0].files, ForWebDir);
+            })
+            $('#btnUploadMobile').click(function () {
+                UploadFile($('#uploadFile')[0].files, MobileDir);
+            })
         });
-
-
-        function UploadFileChunk(Chunk, FileName, PartCount) {
-            //myApp.showPleaseWait(); //show dialog
- 
-            var FD = new FormData();
-            var next = 0
-            FD.append('file', Chunk, FileName);
-            $.ajax({
-                //xhr: function () {
-                //    var xhr = window.XMLHttpRequest();
-                    
-                //    $('.progres').css({
-                //        width: next * 1 + '%'
-                //    });
-                //    xhr.upload.addEventListener("progress", function (evt) {
-                //        if (evt.lengthComputable) {
-                //            var percentComplete = evt.loaded / evt.total;
-                //            console.log(percentComplete);
-                //            $('.progress').css({
-                //                width: percentComplete * 100 + '%'
-                //            });
-                //        }
-                //        if (evt.lengthComputable == false) {
-                //            next++;
-                //            $('.progres').css({
-                //                width: next * 1 + '%'
-                //            });
-                //        }
-                //    }, false);
-
-                //    xhr.upload.addEventListener("error", function transferFailed(evt) {
-                //        alert("Error");
-                //    }, false);
-
-                //    return xhr;
-                //},
-                type: "POST",
-                url: '/Native/UploadFileNative',
-                contentType: false,
-                processData: false,
-                data: FD,
-                success: function (FD) { }
-            });
-        }
-
         function move(TotalParts, PartCount) {
             var elem = document.getElementById("pleaseWaitDiv");
             var partframe = 100 / TotalParts;
@@ -78,67 +25,34 @@
             elem.style.width = nextCount + '%';
             elem.innerHTML = nextCount * 1 + '%';
         };
-
-
-        //var myApp;
-        //myApp = myApp || (function () {
-        //    var pleaseWaitDiv = $('<div class="modal" id="pleaseWaitDiv" role="dialog" style="display:none"><div class="modal-dialog" data-backdrop="static" data-keyboard="false"><div class="modal-content"><h1>Progress...</h1><div class="progress progress-striped active"><div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div></div><div class="progres progres-striped active"><div class="progres-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div></div></div></div></div>');
-        //    return {
-        //        showPleaseWait: function () {
-        //            pleaseWaitDiv.modal();
-        //        },
-        //        hidePleaseWait: function () {
-        //            pleaseWaitDiv.modal('hide');
-        //        },
-
-        //    };
-        //})();
-
-
-        function UploadNativeFile(TargetFile) {
-            // create array to store the buffer chunks
-            var FileChunk = [];
-            // the file object itself that we will work with
-            var file = TargetFile[0];
-            // set up other initial vars
-            var MaxFileSizeMB = 2;
-            var BufferChunkSize = MaxFileSizeMB * (1024 * 1024);
-            var ReadBuffer_Size = 2048;
-            var FileStreamPos = 0;
-            // set the initial chunk length
-            var EndPos = BufferChunkSize;
-            var Size = file.size;
-
-            // add to the FileChunk array until we get to the end of the file
-            while (FileStreamPos < Size) {
-                // "slice" the file from the starting position/offset, to  the required length
-                FileChunk.push(file.slice(FileStreamPos, EndPos));
-                FileStreamPos = EndPos; // jump by the amount read
-                EndPos = FileStreamPos + BufferChunkSize; // set next chunk length
-            }
-            // get total number of "files" we will be sending
-            var TotalParts = FileChunk.length;
-            var PartCount = 0;
-            // loop through, pulling the first item from the array each time and sending it
-            while (chunk = FileChunk.shift()) {
-                PartCount++;
-                var FilePartName = file.name + ".part_" + PartCount + "." + TotalParts;
-                // send the file
-                move(TotalParts, PartCount);
-                UploadFileChunk(chunk, FilePartName, PartCount);
-            }
-
-        }
-
-
     </script>
 
-<div class="container">
-    <div class="progress">
-        <div class="progress-bar progress-bar-striped active" id="pleaseWaitDiv" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:1%">
-            80%
+    <body>
+        <h2>"Загрузка архивов"</h2>
+
+        <div class="container">
+            <input type="file" class="btn btn-danger" id="uploadFile" multiple="multiple" name="Файл" />
+            <br />
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle col-md-push-2" data-toggle="dropdown">
+                    Выберите директорию
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#" id="btnUploadNative">Необработанные фотографии</a>
+                    <a class="dropdown-item" href="#" id="btnUploadForWeb">Обработанные фотографии</a>
+                    <a class="dropdown-item" href="#" id="btnUploadMobile">Мобильные фотографии</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-}
+        <br />
+        <br />
+            <div class="container">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" id="pleaseWaitDiv" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:1%">
+                        80%
+                    </div>
+                </div>
+            </div>
+</body>
+
 

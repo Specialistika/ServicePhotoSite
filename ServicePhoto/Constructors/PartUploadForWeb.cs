@@ -132,8 +132,8 @@ namespace Constructor.blockForWeb
         }
         public bool unzip(string baseFileName)
         {
-            UnZipForWeb UT = new UnZipForWeb();
-            UT.Extract(baseFileName);
+            //UnZipForWeb UT = new UnZipForWeb();
+			UnZipForWeb.Extract(baseFileName);
             return MergeFileList.Contains(baseFileName);
         }
 

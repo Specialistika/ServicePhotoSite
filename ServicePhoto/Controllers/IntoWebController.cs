@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Repair.context;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
-using PhotoConsole.Domain.Entities;
+//using PhotoConsole.Domain.Entities;
 using PhotoConsole.Domain.Data;
 
 namespace UnZipFileForWeb.Controllers
@@ -15,36 +15,37 @@ namespace UnZipFileForWeb.Controllers
     {
         public ActionResult Read_IntoCap([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(context.IntoCapture.ToDataSourceResult(request, e => new IntoCap
-            { 
+            return Json(context.ProcessCapture.ToDataSourceResult(request, e => new ProcessCapture
+			{ 
                 Id = e.Id,
                 ToCapture = e.ToCapture,
-                Dateloginto = Convert.ToDateTime(e.Dateloginto)
+				DateProcess = Convert.ToDateTime(e.DateProcess)
             }));
         }
-        public ActionResult Update_IntoCap(IntoCap employee)
+        public ActionResult Update_IntoCap(ProcessCapture employee)
         {
             if (employee != null && ModelState.IsValid)
             {
                 var target = GetEmployeeByID(employee.Id);
                 target.ToCapture = employee.ToCapture;
-                target.Dateloginto = employee.Dateloginto;
+                target.DateProcess = employee.DateProcess;
                 context.SaveChanges();
             }
 
             return Json(ModelState.ToDataSourceResult());
         }
 
-        public ActionResult Create_IntoCap(IntoCap employee)
+        public ActionResult Create_IntoCap(ProcessCapture employee)
         {
             if (employee != null && ModelState.IsValid)
             {
-                var target = new IntoCapture{
+                var target = new ProcessCapture
+				{
                 Id = employee.Id,
                 ToCapture = employee.ToCapture,
-                Dateloginto = employee.Dateloginto
+				DateProcess = employee.DateProcess
                 };
-                context.IntoCapture.Add(target);
+                context.ProcessCapture.Add(target);
                 context.SaveChanges();
 
                 employee.Id = target.Id;
@@ -56,14 +57,14 @@ namespace UnZipFileForWeb.Controllers
         public ActionResult Destroy_IntoCap(int employeeID)
         {
             var target = GetEmployeeByID(employeeID);
-            context.IntoCapture.Remove(target);
+            context.ProcessCapture.Remove(target);
             context.SaveChanges();
 
             return Json(ModelState.ToDataSourceResult());
         }
-        private IntoCapture GetEmployeeByID(int id)
+        private ProcessCapture GetEmployeeByID(int id)
         {
-            return context.IntoCapture.FirstOrDefault(e => e.Id == id);
+            return context.ProcessCapture.FirstOrDefault(e => e.Id == id);
         }
     }
 }

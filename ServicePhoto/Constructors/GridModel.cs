@@ -16,7 +16,7 @@ namespace Constructors.GridAction
         public List<OutInfos> GetPlayers(int? page, int? limit, string sortBy, string direction, string searchString, out int total)
         {
             DateTime dt;
-            using (var context = new RenFilesEntities1())
+            using (var context = new RenFilesEntities())
             {
                 var records = (from p in context.OutInfo
                                select new OutInfos
@@ -67,7 +67,7 @@ namespace Constructors.GridAction
 
         public void Save(OutInfo Cap)
         {
-            using (var context = new RenFilesEntities1())
+            using (var context = new RenFilesEntities())
             {
                 if (Cap.Id > 0)
                 {
@@ -102,7 +102,7 @@ namespace Constructors.GridAction
 
         public void Remove(OutInfos Codelog)
         {
-            using (var context = new RenFilesEntities1())
+            using (var context = new RenFilesEntities())
             {
                 var Icp = (from p in context.OutInfo
                                  where p.Codelog == Codelog.Codelog

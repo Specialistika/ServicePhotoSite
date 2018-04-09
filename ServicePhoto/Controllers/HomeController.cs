@@ -28,11 +28,17 @@ namespace Controllers.Home
 
             return View();
         }
+        public ActionResult UploadFiles()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
         public ActionResult UpdateProduct()
         {
             return View();
         }
-        public void UploadProductMuthod()
+        public void UploadProductMethod()
         {
             int countProd = UploadProductsSup.startUploadMethod();
         }

@@ -4,15 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0ee46e66ece44968901f388bcc26b9e4" Name="Diagram1">
-        <EntityTypeShape EntityType="RenFilesModel.InBarcode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RenFilesModel.InCapture" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RenFilesModel.IntoCapture" Width="1.5" PointX="6.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RenFilesModel.OutInfo" Width="1.5" PointX="4.625" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RenFilesModel.Categories" Width="1.5" PointX="0.75" PointY="3" />
-        <EntityTypeShape EntityType="RenFilesModel.ForWebTest" Width="1.5" PointX="3.125" PointY="3.125" />
-        <EntityTypeShape EntityType="RenFilesModel.Not_inBase" Width="1.5" PointX="7.125" PointY="2.875" />
-        <EntityTypeShape EntityType="RenFilesModel.OutInCapture" Width="1.5" PointX="5" PointY="3.125" />
+      <Diagram DiagramId="1306655293af4c4786485c4e343ad853" Name="Diagram1" ShowGrid="true" SnapToGrid="true" DisplayType="true">
+        <EntityTypeShape EntityType="RenFilesModel.Categories" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.ErrorFix" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.ForWebTest" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.InBarcode" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.Not_inBase" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.OutInCapture" Width="1.5" PointX="4.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.OutInfo" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RenFilesModel.NameZip" Width="1.5" PointX="6.625" PointY="0.75" />
+        <EntityTypeShape EntityType="RenFilesModel.UploadCapture" Width="1.5" PointX="6.625" PointY="4.5" />
+        <EntityTypeShape EntityType="RenFilesModel.ProcessCapture" Width="1.5" PointX="8.625" PointY="0.75" />
+        <EntityTypeShape EntityType="RenFilesModel.NameZip1" Width="1.5" PointX="5.375" PointY="3.75" />
+        <AssociationConnector Association="RenFilesModel.FK_UploadCapture_ToTable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

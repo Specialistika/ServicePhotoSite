@@ -23,21 +23,26 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Отчет", "Index", "Reports")</li>
                     <li>@Html.ActionLink("Обновление базы", "UpdateProduct", "Home")</li>
+                    <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("О сайте", "About", "Home")</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        @*<hr />*@
         <footer>
-            <p>&copy; @DateTime.Now.Year - <a href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=7366305" title="check out more interesting articles...">ajson</a> under the <a href="http://www.codeproject.com/info/cpol10.aspx" title="Its a gift to you!">codeproject license</a></p>
+            <div class="col-sm-12">
+                <p>&copy; @DateTime.Now.Year - <a href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=7366305" title="check out more interesting articles...">ajson</a> under the <a href="http://www.codeproject.com/info/cpol10.aspx" title="Its a gift to you!">codeproject license</a></p>
+            </div>
         </footer>
     </div>
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/viewer")
     @RenderSection("scripts", required: false)
 </body>
 </html>

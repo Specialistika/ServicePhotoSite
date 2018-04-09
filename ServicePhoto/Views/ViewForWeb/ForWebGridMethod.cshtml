@@ -1,50 +1,113 @@
 ﻿<script type="text/javascript">
 
-    //function Search(e) {
-    //    search: $("#search").val(e.search);
-    //};
+    function Search(e) {
+        search: $("#search").val(e.search);
+    };
+
+    function GetPhoto(e) {
+        var photo = {
+            Id: e.data.record.Id,
+            Capture: e.data.record.Capture,
+            FolderName: e.data.record.FolderName
+        };
+        $.ajax({
+            url: "GetPhoto", type: "POST", data: { Photos: photo },
+            success: function (response) {
+                var viewer = new Viewer(document.getElementById("images"),
+                    {
+                        button: true,
+                        navbar: false,
+                        toolbar: {
+                            zoomIn: 4,
+                            zoomOut: 4,
+                            oneToOne: 4,
+                            reset: 4,
+                            play: {
+                                show: 4,
+                                size: 'large',
+                            },
+                            rotateLeft: 4,
+                            rotateRight: 4,
+                            flipHorizontal: 4,
+                            flipVertical: 4,
+                        },
+                        viewed: function () {
+                            viewer.zoomTo(0.7);
+
+                        }
+                    });
+
+                //var image = new Image();
+                //src = 'data:image/gif;base64,';
+                //src += response;
+                //image.src = src;
+                //image.width = image.height = "100";
+                //image.class = "img-circle";
+                //document.body.appendChild(blah);
+
+                $('#blah').attr('src', response.fullPath);
+            }
+        });
+    };
+
+
     function Search() {
         gridOutInfos.reload({ searchString: $("#search").val() });
     }
 
 
     $(document).ready(
-    function () {
-        gridOutInfos = $("#gridOutInfos").grid({
-            dataKey: "idd",
-            uiLibrary: "bootstrap",
-            columns: [
-                            { field: "Id", width: 50, sortable: true },
-                            { field: "Capture", width: 100, title: "Штрих-Код", sortable: true },
-                            { field: "Dateinto", width: 100, format: "yyyy-mm-dd HH:MM:ss", type: "date", title: "Дата", sortable: true },
-            ],
-            pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+        function () {
+            gridOutInfos = $("#gridOutInfos").grid({
+                dataKey: "idd",
+                uiLibrary: "bootstrap",
+                columns: [
+                    { field: "Id", width: 50, sortable: true },
+                    { field: "Capture", width: 100, title: "Штрих-Код", sortable: true, events: { "click": GetPhoto } },
+                    { field: "Dateinto", width: 100, format: "yyyy-mm-dd HH:MM:ss", type: "date", title: "Дата", sortable: true },
+                    { field: "FolderName", width: 100, title: "Директория", sortable: true }
+                ],
+                pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+            });
+            $("#btnSearch").on("click", Search);
         });
-        $("#btnSearch").on("click", Search);
-    });
+
 
 </script>
-<div class="container">
-        <h3>Редактор загруженных архивов от подрядчика</h3>
-        @*<p>Введите название архива в строку поиска с расширением (.zip).</p>*@
-    </div>
 
-<body>
-    <div class="container fill">
-        <br />
-        <div class="row">
-            <div class="col-md-3">
-                <div class="input-group">
-                    <input type="text" id="search" class="form-control" placeholder="Search archive...">
-                    <span class="input-group-btn">
-                        <button type="button" id="btnSearch" class="btn btn-primary">Поиск архива</button>
-                    </span>
-                </div>
+<div class="container fill">
+    <div class="row">
+        <div class="col-sm-4 text-info">
+            <h3>Редактор загруженных архивов от подрядчика</h3>
+        </div>
+        <div class="col-md-4">
+            <ul id="images">
+                <li><img class="img-rounded" id="blah" height="200" width="300" /></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <input type="text" id="search" class="form-control" placeholder="Search archive...">
+                <span class="input-group-btn">
+                    <button type="button" id="btnSearch" class="btn btn-primary">Поиск архива</button>
+                </span>
             </div>
-            <br />
-            <br />
-            <table id="gridOutInfos" data-source="@Url.Action("ForWebReadMethod")"></table>
         </div>
         <br />
+        <br />
+        @*<table>
+                <tr>
+                    <th height="40" width="40" bgcolor="#ccffcc">Photo</th>
+                </tr>
+                <tr>
+                    <td height="40" id="images"></td>
+                </tr>
+            </table>*@
+        <div class="col-sm-12">
+            <table class="col-xs-3" id="gridOutInfos" data-source="@Url.Action("ForWebReadMethod")"></table>
+        </div>
     </div>
-</body>
+    <br />
+</div>
+
+

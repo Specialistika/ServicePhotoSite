@@ -5,14 +5,15 @@ using ComponentAce.Compression.Archiver;
 using System.IO.Compression;
 using PhotoConsole.Domain.Data;
 using Constructors.PathString;
+using Models.ForWeb;
 
 namespace Conctructor.UnZipFileForWeb
 {
-    public class UnZipForWeb
-    {
+    public class UnZipForWeb : ForWebModel
+	{
         //public string SourceFile { get; set; }
 
-        public void Extract(string SourceFile)
+        public static void Extract(string SourceFile)
         {
             using (var archiver = new ZipForge())
             {
@@ -33,20 +34,20 @@ namespace Conctructor.UnZipFileForWeb
 
             using (ZipArchive archive = ZipFile.OpenRead(SourceFile))
             {
-                using (var db = new RenFilesEntities1())
+                using (var db = new RenFilesEntities())
                     foreach (ZipArchiveEntry entry in archive.Entries)
                     {
                         string nv = entry.Name;
-                        var forwebtest = new InCapture
+                        var forwebtest = new UploadCapture
                         {
                             Capture = nv,
-                            Dateinto = DateTime.Now
+                            DateUpload = DateTime.Now
                         };
-                        if (forwebtest.id == 0)
+                        if (forwebtest.Id == 0)
                         {
                             try
                             {
-                                db.InCapture.Add(forwebtest);
+                                db.UploadCapture.Add(forwebtest);
                             }
                             catch (Exception s)
                             {

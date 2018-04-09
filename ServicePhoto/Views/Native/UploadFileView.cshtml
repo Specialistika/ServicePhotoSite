@@ -1,0 +1,65 @@
+﻿<script>
+        $(document).ready(function () {
+            $('#uploadFile').click(function () {
+                    var elem = document.getElementById("pleaseWaitDiv");
+                    elem.style.width = 1 + '%';
+                    elem.innerHTML = 1 + '%';
+            })
+            $('#btnUploadNative').click(function () {
+                UploadFile($('#uploadFile')[0].files, 'NativeDir');
+            })
+            $('#btnUploadForWeb').click(function () {
+                UploadFile($('#uploadFile')[0].files, 'ForWebDir');
+            })
+            $('#btnUploadMobile').click(function () {
+                UploadFile($('#uploadFile')[0].files, 'MobileDir');
+            })
+        });
+        function move(TotalParts, PartCount) {
+            var elem = document.getElementById("pleaseWaitDiv");
+            var partframe = 100 / TotalParts;
+            var nextCount = partframe * PartCount;
+            elem.style.width = nextCount + '%';
+            elem.innerHTML = nextCount * 1 + '%';
+        };
+        function httpResponce(responce) {
+            var elem = document.getElementById("status");
+            elem.innerHTML = responce;
+        }
+        function httpResponceChunk(responce) {
+            var elem = document.getElementById("statusChank");
+            elem.innerHTML = responce;
+        }
+
+</script>
+
+<body>
+    <h2>"Загрузка архивов"</h2>
+
+    <div class="container">
+        <input type="file" class="btn btn-danger" id="uploadFile" multiple="multiple" name="Файл" />
+        <br />
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle col-md-push-2" data-toggle="dropdown">
+                Выберите директорию
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#" id="btnUploadNative">Необработанные фотографии</a>
+                <a class="dropdown-item" href="#" id="btnUploadForWeb">Обработанные фотографии</a>
+                <a class="dropdown-item" href="#" id="btnUploadMobile">Мобильные фотографии</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="container">
+        <i><span class="text-center" id="status" /><span class="text-center" id="statusChank" /></i>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" id="pleaseWaitDiv" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:1%">
+                80%
+            </div>
+        </div>
+    </div>
+</body>
+
+

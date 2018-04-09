@@ -1,0 +1,57 @@
+﻿
+<div class="container">
+    <h2>Меню загрузки</h2>
+    <div data-ng-app="app">
+        <div class="row">
+            <div class="col-sm-12">
+                @*<ol class="breadcrumb">
+                    <li>root</li>
+                    <li class="active">folder</li>
+                </ol>*@
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#home">Обработанные</a></li>
+            <li><a data-toggle="tab" href="#menu1">Не обработанные</a></li>
+            <li><a data-toggle="tab" href="#menu2">Мобильный контент</a></li>
+            <li><a data-toggle="tab" href="#menu3">Каталог рецептов</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>Директория обработанных фотографий</h3>
+                <div class="row" data-flow-init="{target: '/folders/uploads/ForWeb'}"
+                     data-flow-files-submitted="$flow.upload()"
+                     data-flow-file-success="$file.msg = $message">
+                    <div class="col-sm-12" data-folder></div>
+                </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <h3>Директория для необработанных фотографий</h3>
+                <div class="row" data-flow-init="{target: '/folders/uploads/Native'}"
+                     data-flow-files-submitted="$flow.upload()"
+                     data-flow-file-success="$file.msg = $message">
+                    <div class="col-sm-12" data-folder></div>
+                </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <h3>Мобильный контент</h3>
+                <div class="row" data-flow-init="{target: '/folders/uploads/for_mobile'}"
+                     data-flow-files-submitted="$flow.upload()"
+                     data-flow-file-success="$file.msg = $message">
+                    <div class="col-sm-12" data-folder></div>
+                </div>
+            </div>
+            <div id="menu3" class="tab-pane fade">
+                <h3>Каталог рецептов</h3>
+                <div class="row" data-flow-init="{target: '/folders/uploads/Recipe'}"
+                     data-flow-files-submitted="$flow.upload()"
+                     data-flow-file-success="$file.msg = $message">
+                    <div class="col-sm-12" data-folder></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
